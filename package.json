@@ -26,6 +26,6 @@
   },
   "scripts": {
     "build": "webpack",
-    "start": "webpack-dev-server --content-base dist"
+    "start": "webpack-dev-server --progress --colors --content-base dist"
   }
 }
