@@ -1,4 +1,6 @@
-var HtmlWebpackPlugin = require('html-webpack-plugin')
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var path = require('path');
+
 var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
   template: __dirname + '/src/index.html',
   filename: 'index.html',
@@ -6,11 +8,11 @@ var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
 });
 module.exports = {
   entry: [
-    './src/App.js'
+    './src/components/App.js'
   ],
   output: {
-    path: __dirname + '/dist',
-    filename: "app.js"
+    path: path.resolve(__dirname, "dist"),
+    filename: "js/app.js",
   },
   module: {
     loaders: [
