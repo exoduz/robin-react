@@ -4,10 +4,6 @@ import ColumnMD4 from './ColumnMD4';
 import ProgressBar from './ProgressBar';
 
 class OtherInformation extends React.Component {
-	renderProgressBar() {
-
-	}
-
 	render() {
 		var languages = {
 			lang1: { name: 'English', proficiency: 'Native', level: 99 },

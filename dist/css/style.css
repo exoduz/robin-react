@@ -404,6 +404,7 @@ header {
   #skills .progress-bar.sqlserver { width: 60%; }
   #skills .progress-bar.cakephp { width: 85%; }
   #skills .progress-bar.wordpress { width: 80%; }
+  #skills .progress-bar.react-js { width: 75%; }
   #skills .progress-bar.dotnet { width: 60%; }
   #skills .progress-bar.apache { width: 75%; }
   #skills .progress-bar.nginx { width: 75%; }

@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import Skills from './Skills';
 import OtherInformation from './OtherInformation';
 import Social from './Social';
 import Thanks from './Thanks';
@@ -18,6 +19,7 @@ class App extends React.Component {
 	render() {
 		return (
 			<div>
+				<Skills />
 				<OtherInformation />
 				<Social />
 				<Thanks />
