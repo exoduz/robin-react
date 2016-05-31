@@ -21,12 +21,14 @@ class Hero extends React.Component {
 				link: {
 					link1: {
 						link_url: 'https://collectstor.com',
-						text: 'Visit the website and start showcasing <i class="fa fa-external-link"></i>',
+						text: 'Visit the website and start showcasing',
+						icon: 'fa fa-external-link',
 						class_name: 'hidden-on-mobile'
 					},
 					link2: {
 						link_url: 'https://collectstor.com',
-						text: 'Visit website <i class="fa fa-external-link"></i>',
+						text: 'Visit website',
+						icon: 'fa fa-external-link',
 						class_name: 'show-on-mobile'
 					}
 				}
@@ -46,7 +48,8 @@ class Hero extends React.Component {
 				link: {
 					link1: {
 						link_url: 'https://itunes.apple.com/us/app/collectstor-showcasing-collections/id1044554718',
-						text: 'Download on the <i class="fa fa-apple"></i> App Store',
+						text: 'Download on the App Store',
+						icon: 'fa fa-apple',
 						class_name: ''
 					}
 				}
@@ -66,12 +69,14 @@ class Hero extends React.Component {
 				link: {
 					link1: {
 						link_url: 'https://itunes.apple.com/us/app/last-cigarette/id1088134074',
-						text: 'Download on the <i class="fa fa-apple"></i> App Store',
+						text: 'Download on the App Store',
+						icon: 'fa fa-apple',
 						class_name: ''
 					},
 					link2: {
 						link_url: 'https://github.com/exoduz/last-cigarette',
-						text: 'Download source on <i class="fa fa-github"></i> Github',
+						text: 'Download source on Github',
+						icon: 'fa fa-github',
 						class_name: ''
 					}
 				}

@@ -5,11 +5,12 @@ class ExternalLink extends React.Component {
 		var data = this.props.data,
 			url = data.link_url,
 			text = data.text,
+			icon = data.icon,
 			class_name = data.class_name;
 
 		return (
 			<a href={ url } target="_blank" className={ "btn btn-external-link " + class_name } role="button">
-				 <span dangerouslySetInnerHTML={{ __html: text }} />
+				 { text } { icon ? <i className={ icon }></i> : '' }
 			</a>
 		)
 	}
