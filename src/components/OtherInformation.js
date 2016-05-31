@@ -1,10 +1,10 @@
 import React from 'react';
 
 import ColumnMD4 from './ColumnMD4';
-import ProgressBarLanguages from './ProgressBarLanguages';
+import ProgressBar from './ProgressBar';
 
 class OtherInformation extends React.Component {
-	render() {
+	getData(key) {
 		var languages = {
 			lang1: { name: 'English', proficiency: 'Native', level: 99 },
 			lang2: { name: 'Indonesian', proficiency: 'Native', level: 99 },
@@ -13,6 +13,15 @@ class OtherInformation extends React.Component {
 			lang5: { name: 'Cantonese', proficiency: 'Conversational', level: 50 }
 		}
 
+		return key ? languages[key] : languages;
+	}
+
+	renderProgressBar(key) {
+		var data = this.getData(key);
+		return <ProgressBar key={ key } type={ 'languages' } data={ data } />;
+	}
+
+	render() {
 		return (
 		  <section id="other-info">
 		    <div className="container">
@@ -23,11 +32,7 @@ class OtherInformation extends React.Component {
 
 		        <ColumnMD4>
 		        	<h3>Languages</h3>
-							{
-								Object.keys(languages).map(function(index) {
-  								return <ProgressBarLanguages key={ index } data={ languages[index] } />
-								})
-							}
+							{ Object.keys(this.getData()).map(key => this.renderProgressBar(key)) }
 		        </ColumnMD4>
 
 		        <ColumnMD4>
