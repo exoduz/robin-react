@@ -1,7 +1,7 @@
 import React from 'react';
 
 import ColumnMD4 from './ColumnMD4';
-import ProgressBar from './ProgressBar';
+import ProgressBarLanguages from './ProgressBarLanguages';
 
 class OtherInformation extends React.Component {
 	render() {
@@ -23,10 +23,9 @@ class OtherInformation extends React.Component {
 
 		        <ColumnMD4>
 		        	<h3>Languages</h3>
-							
 							{
-								Object.keys(languages).map(function(lang) {
-  								return <ProgressBar key={ lang } data={ languages[lang] } />
+								Object.keys(languages).map(function(index) {
+  								return <ProgressBarLanguages key={ index } data={ languages[index] } />
 								})
 							}
 		        </ColumnMD4>

@@ -1,10 +1,46 @@
 import React from 'react';
 
 import ColumnMD4 from './ColumnMD4';
-import ProgressBar from './ProgressBar';
+import ProgressBarSkills from './ProgressBarSkills';
 
 class Skills extends React.Component {
 	render() {
+		var skills = {
+			programming: {
+				programming1: { name: 'HTML5', class_name: 'html', level: 99 },
+				programming2: { name: 'CSS3', class_name: 'css', level: 99 },
+				programming3: { name: 'PHP', class_name: 'php', level: 85 },
+				programming4: { name: 'Javascript', class_name: 'js', level: 70 },
+				programming5: { name: 'C#', class_name: 'csharp', level: 60 }
+			},
+			database: {
+				database1: { name: 'MySQL', class_name: 'mysql', level: 75 },
+				database2: { name: 'MS SQL Server', class_name: 'sqlserver', level: 60 }
+			},
+			frameworks: {
+				framework1: { name: 'CakePHP', class_name: 'cakephp', level: 85 },
+				framework2: { name: 'WordPress', class_name: 'wordpress', level: 80 },
+				framework3: { name: 'React.js', class_name: 'react-js', level: 75 },
+				framework4: { name: '.NET', class_name: 'dotnet', level: 60 }
+			},
+			webserver: {
+				webserver1: { name: 'Apache', class_name: 'apache', level: 75 },
+				webserver2: { name: 'Nginx', class_name: 'nginx', level: 75 },
+				webserver3: { name: 'IIS', class_name: 'iis', level: 75 }
+			},
+			os: {
+				os1: { name: 'OSX', class_name: 'osx', level: 95 },
+				os2: { name: 'Windows', class_name: 'windows', level: 90 },
+				os3: { name: 'Linux', class_name: 'linux', level: 70 }
+			},
+			software: {
+				software1: { name: 'Microsoft Office', class_name: 'office', level: 95 },
+				software2: { name: 'Sublime', class_name: 'sublime', level: 90 },
+				software3: { name: 'Adobe Suite', class_name: 'adobe', level: 70 },
+				software4: { name: 'Visual Studio Suite', class_name: 'visualstudio', level: 70 },
+			}
+		};
+
 		return (
 			<section id="skills">
 				<div className="container">
@@ -15,126 +51,51 @@ class Skills extends React.Component {
 
 		        <ColumnMD4>
 		          <h3>Programming</h3>
-		          <div className="progress">
-		              <div className="progress-bar html" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
-		                HTML5
-		              </div>
-		          </div>
-		          <div className="progress">
-		              <div className="progress-bar css" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
-		                CSS3
-		              </div>
-		            </div>
-		          <div className="progress">
-		              <div className="progress-bar php" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-		                PHP
-		              </div>
-		            </div>
-		            <div className="progress">
-		              <div className="progress-bar js" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
-		                Javascript
-		              </div>
-		            </div>
-		            <div className="progress">
-		              <div className="progress-bar csharp" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
-		                C#
-		              </div>
-		            </div>
+		          {
+								Object.keys(skills.programming).map(function(index) {
+  								return <ProgressBarSkills key={ index } data={ skills.programming[index] } />
+								})
+							}
 
-		            <h3>Database</h3>
-		          <div className="progress">
-		              <div className="progress-bar mysql" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-		                MySQL
-		              </div>
-		          </div>
-		          <div className="progress">
-		              <div className="progress-bar sqlserver" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
-		                MS SQL Server
-		              </div>
-		          </div>
+							<h3>Database</h3>
+		          {
+								Object.keys(skills.database).map(function(index) {
+  								return <ProgressBarSkills key={ index } data={ skills.database[index] } />
+								})
+							}
 		        </ColumnMD4>{/* .col-md-4 */}
 
 		        <ColumnMD4>
 		          <h3>Frameworks</h3>
-		            <div className="progress">
-		              <div className="progress-bar cakephp" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-		                CakePHP
-		              </div>
-		            </div>
-		            <div className="progress">
-		              <div className="progress-bar wordpress" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-		                Wordpress
-		              </div>
-		            </div>
-		            <div className="progress">
-		              <div className="progress-bar react-js" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-		                React.js
-		              </div>
-		            </div>
-		            <div className="progress">
-		              <div className="progress-bar dotnet" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
-		                .NET
-		              </div>
-		            </div>
-		            <h4>... and others</h4>
+	            {
+								Object.keys(skills.frameworks).map(function(index) {
+  								return <ProgressBarSkills key={ index } data={ skills.frameworks[index] } />
+								})
+							}
+	            <h4>... and others</h4>
 
 		          <h3>Web Server</h3>
-		          <div className="progress">
-		              <div className="progress-bar apache" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-		                Apache
-		              </div>
-		          </div>
-		          <div className="progress">
-		              <div className="progress-bar nginx" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-		                Nginx
-		              </div>
-		          </div>
-		          <div className="progress">
-		              <div className="progress-bar iis" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-		                IIS
-		              </div>
-		          </div>
+		          {
+								Object.keys(skills.webserver).map(function(index) {
+  								return <ProgressBarSkills key={ index } data={ skills.webserver[index] } />
+								})
+							}
 		        </ColumnMD4>
 
 		        <ColumnMD4>
 		          <h3>Operating Systems</h3>
-		          <div className="progress">
-		              <div className="progress-bar osx" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
-		                OSX
-		              </div>
-		          </div>
-		          <div className="progress">
-		              <div className="progress-bar windows" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-		                Windows
-		              </div>
-		          </div>
-		          <div className="progress">
-		              <div className="progress-bar linux" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
-		                Linux
-		              </div>
-		          </div>
+		          {
+								Object.keys(skills.os).map(function(index) {
+  								return <ProgressBarSkills key={ index } data={ skills.os[index] } />
+								})
+							}
 
 		          <h3>Software</h3>
-		          <div className="progress">
-		              <div className="progress-bar office" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
-		                Microsoft Office
-		              </div>
-		          </div>
-		          <div className="progress">
-		              <div className="progress-bar sublime" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-		                Sublime
-		              </div>
-		          </div>
-		          <div className="progress">
-		              <div className="progress-bar adobe" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
-		                Adobe Suite
-		              </div>
-		          </div>
-		          <div className="progress">
-		              <div className="progress-bar adobe" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
-		                Visual Studio Suite
-		              </div>
-		          </div>
+		          {
+								Object.keys(skills.software).map(function(index) {
+  								return <ProgressBarSkills key={ index } data={ skills.software[index] } />
+								})
+							}
 		        </ColumnMD4>
 		      </div>{/* .row */}
 

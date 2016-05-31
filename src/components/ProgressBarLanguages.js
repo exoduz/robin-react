@@ -1,6 +1,6 @@
 import React from 'react';
 
-class ProgressBar extends React.Component {
+class ProgressBarLanguages extends React.Component {
 	render() {
 		
 		var data = this.props.data,
@@ -18,12 +18,12 @@ class ProgressBar extends React.Component {
 	}
 }
 
-ProgressBar.defaultProps = {
+ProgressBarLanguages.defaultProps = {
   data: {}
 };
 
-ProgressBar.propTypes = {
+ProgressBarLanguages.propTypes = {
 	data: React.PropTypes.object.isRequired
 }
 
-export default ProgressBar;
+export default ProgressBarLanguages;

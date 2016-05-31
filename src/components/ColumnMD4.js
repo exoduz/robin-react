@@ -1,6 +1,5 @@
 import React from 'react';
 
-import ProgressBar from './ProgressBar';
 
 class ColumnMD4 extends React.Component {
 	render() {
