@@ -8,7 +8,6 @@ class Hero extends React.Component {
 		var showcase = {
 			showcase1: {
 				class_name: 'col-md-12 showcase-1 border-b',
-				desc: 'Collectstor is a platform for collectors of all things to socialize, explore, and showcase their own collections.',
 				logo: {
 					image_url: 'assets/img/co-logo-inline-white.png',
 					alt: 'Collectstor Logo',
@@ -34,10 +33,6 @@ class Hero extends React.Component {
 			},
 			showcase2: {
 				class_name: 'col-md-6 showcase-2 border-r',
-				desc: `
-           The iPhone app is also available.<br />
-           Now you can showcase and share collections on the go.
-				`,
 				logo: {
 					image_url: 'assets/img/co-logo-inline-white.png',
 					alt: 'Collectstor Logo',
@@ -58,7 +53,6 @@ class Hero extends React.Component {
 			},
 			showcase3: {
 				class_name: 'col-md-6 showcase-3',
-				desc: 'A simple counter to track the time you last quit smoking. It shows information such as the duration, money saved and cigarettes not smoked.',
 				logo: {
 					image_url: 'assets/img/last-cigarette-app-icon-2.png',
 					alt: 'Last Cigarette Logo',
@@ -88,18 +82,29 @@ class Hero extends React.Component {
 	}
 
 	render() {
+		var showcase1 = this.getData('showcase1'),
+			showcase2 = this.getData('showcase2'),
+			showcase3 = this.getData('showcase3');
+
 		return (
 		  <section id="hero">
 		    <Introduction />
 
 		    <div className="col-lg-9 tile">
 		      <div className="row">
-		        <Showcase data={ this.getData('showcase1') } />
+		        <Showcase data={ showcase1 } >
+		        	Collectstor is a platform for collectors of all things to socialize, explore, and showcase their own collections.
+		        </Showcase>
 		      </div>{/* .row */}
 
 		      <div className="row">
-		      	<Showcase data={ this.getData('showcase2') } />
-		      	<Showcase data={ this.getData('showcase3') } />
+		      	<Showcase data={ showcase2 } >
+		        	The iPhone app is also available.<br />
+		        	Now you can showcase and share collections on the go.
+		        </Showcase>
+		      	<Showcase data={ showcase3 } >
+		        	A simple counter to track the time you last quit smoking. It shows information such as the duration, money saved and cigarettes not smoked.
+		        </Showcase>
 		      </div>{/* .col-md-6 .showcase .showcase-2 border-r */}
 		    </div>{/* .col-lg-9 tile */}
 		  </section>

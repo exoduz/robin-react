@@ -21,10 +21,10 @@ class Showcase extends React.Component {
         <div className="text">
           <Image data={ logo } />
           <p>
-          	<span dangerouslySetInnerHTML={{ __html: desc }} />
+          	{ this.props.children }
           </p>
 
-					{ Object.keys(data.link).map((key) => this.renderLink(link[key], key)) }          
+					{ Object.keys(data.link).map((key) => this.renderLink(link[key], key)) }
         </div>
         <Image data={ image } />
       </div>

@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 class TimelineContent extends React.Component {
 	render() {
 		var data = this.props.data,
@@ -25,7 +24,9 @@ class TimelineContent extends React.Component {
 	          <h3>{ company }</h3>
 	          <h4>{ role }</h4>
 	          <h5>{ location }</h5>
-	          <div dangerouslySetInnerHTML={{ __html: desc }} />
+	          
+	          { desc ? <ul>{ desc.map((value, index) => <li key={ index }>{ value }</li>) }</ul> : '' }
+
 	          <span className="date">{ date }</span>
 	        </div> {/* timeline-content */}
 	      </div>
