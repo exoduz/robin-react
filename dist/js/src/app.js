@@ -50,6 +50,7 @@ $(document).ready(function() {
 		offset: 'bottom-in-view'
 	});
 
+	/*
 	//ajax contact form
 	var submitButton = $("#contact .btn-submit");
 	submitButton.button('reset');
@@ -68,23 +69,23 @@ $(document).ready(function() {
 			    ajaxUrl.address,
 			    data,
 			    function(response){
-			        if (response === "ok") {
-			        	//success
-			        	form.reset();
-			        	submitButton.text("Email Sent").addClass('success');
-			        	setTimeout(function() {
-			        		submitButton.removeClass('success').button('reset'); //reset text after 1.5secs
-			        	}, 1500);
-			        } else {
-			        	//uh oh!
-			        	submitButton.html("Something went wrong. Please try again.").addClass('error');
-			        	setTimeout(function() {
-			        		submitButton.removeClass('error').button('reset'); //reset text after 1.5secs
-			        	}, 1500);
-			        }
+		        if (response === "ok") {
+		        	//success
+		        	form.reset();
+		        	submitButton.text("Email Sent").addClass('success');
+		        	setTimeout(function() {
+		        		submitButton.removeClass('success').button('reset'); //reset text after 1.5secs
+		        	}, 1500);
+		        } else {
+		        	//uh oh!
+		        	submitButton.html("Something went wrong. Please try again.").addClass('error');
+		        	setTimeout(function() {
+		        		submitButton.removeClass('error').button('reset'); //reset text after 1.5secs
+		        	}, 1500);
+		        }
 			    }
-			);
+				);
 	  	}
 	});
-
+	*/
 });
