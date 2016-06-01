@@ -46,37 +46,6 @@
 <body>
   <div id="main"></div>
 
-  <section id="contact">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <h2 class="text-center">Drop me a line and say hi</h2>
-        </div><!-- .col-md-12 -->
-
-        <div class="col-md-8 col-md-offset-2">
-          <form id="home-contact-form" action="submit_home_contact_form">
-            <h4>I need all the following information from you.</h4>
-            <div class="form-group row">
-              <label for="name" class="sr-only">Name</label>
-                <input type="text" class="form-control input-lg" id="name" name="name" placeholder="A name to address you..." required />
-              </div>
-              <div class="form-group row">
-              <label for="email" class="sr-only">Email</label>
-                <input type="email" class="form-control input-lg" id="email" name="email" placeholder="An email to contact you back on..." required />
-              </div>
-              <div class="form-group row">
-              <label for="message" class="sr-only">Message</label>
-                <textarea class="form-control" id="message" name="message" placeholder="So, what's on your mind?" required></textarea>
-              </div>
-              <div class="btn-container text-center">
-                <button type="submit" class="btn btn-submit btn-lg btn-success-outline" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Sending...">Send</button>
-              </div>
-          </form>
-        </div><!-- .col-md-12 -->
-      </div><!-- .row -->
-    </div><!-- .container -->
-  </section><!-- #contact -->
-
   <link rel="stylesheet" href="css/normalize.css" />
   <script type="text/javascript">var ajaxUrl = { address: "<?= admin_url( 'admin-ajax.php' ); ?>" };</script>
 

@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Hero from './Hero';
-import Skills from './Skills';
-import Timeline from './Timeline';
-import OtherInformation from './OtherInformation';
-import Social from './Social';
-import Thanks from './Thanks';
-import Footer from './Footer';
+import Hero from './Hero/Hero';
+import Skills from './Skills/Skills';
+import Timeline from './Timeline/Timeline';
+import OtherInformation from './OtherInformation/OtherInformation';
+import Social from './Social/Social';
+import ContactForm from './ContactForm/ContactForm';
+import Thanks from './Thanks/Thanks';
+import Footer from './Layout/Footer';
 
 class App extends React.Component {
 	render() {
@@ -18,6 +19,7 @@ class App extends React.Component {
 				<Timeline />
 				<OtherInformation />
 				<Social />
+				<ContactForm />
 				<Thanks />
 				<Footer />
 			</div>
