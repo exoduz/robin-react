@@ -21,13 +21,8 @@ class InputText extends React.Component {
 
 	handleBlur(e) {
 		var validate = this.props.validate;
-		
-		if (validate) {
-			validate.map(function(validationType) {
-				var value = e.target.value;
-				window[validationType](e.target.value);
-			});
-		}
+		this.props.onBlur(e.target.value, validate); //pass value and validation methods to parent onBlur function
+		this.setState({ value: e.target.value })
 	}
 
 	isRequired(value) {

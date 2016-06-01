@@ -2,6 +2,7 @@ import React from 'react';
 
 import FormRow from './FormRow';
 import InputText from './InputText';
+import Validate from '../Helpers/Validate'
 
 class ContactForm extends React.Component {
 	constructor(props) {
@@ -14,6 +15,20 @@ class ContactForm extends React.Component {
 		};
 
 		this.handleSubmit = this.handleSubmit.bind(this);
+	}
+
+	handleBlur(value, validation) {
+		var isValid = true;
+
+		validation.map((validate) => {
+			if (validate === 'isRequired') {
+				isValid = Validate.isRequired(value);
+			}
+
+			if (validate === 'isEmail') {
+				isValid = Validate.isEmail(value);
+			}
+		});
 	}
 
 	handleSubmit(e) {
@@ -47,7 +62,7 @@ class ContactForm extends React.Component {
 		          <form id="home-contact-form" onSubmit={ this.handleSubmit }>
 		            <h4>I need all the following information from you.</h4>
 		            
-		            <InputText name={ 'name' } placeholder={ 'A name to address you...' } value={ this.state.name } validate={ ['isRequired'] } />
+		            <InputText name={ 'name' } placeholder={ 'A name to address you...' } value={ this.state.name } validate={ ['isRequired', 'isEmail'] } onBlur={ this.handleBlur } />
 
 								{/*
 		            <FormRow rowClass={ 'form-group row' }>
