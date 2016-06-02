@@ -11,7 +11,7 @@ class InputText extends React.Component {
 		this.state = {
 			value: this.props.value || '',
 			error: false,
-			errorMessage: ''
+			errorMessage: []
 		};
 
 		this.handleChange = this.handleChange.bind(this);
@@ -25,10 +25,15 @@ class InputText extends React.Component {
 
 	handleBlur(e) {
 		var validate = this.props.validate,
-			results = '';
+			results = {};
 
 		results = this.props.onBlur(e.target.value, validate); //pass value and validation methods to parent onBlur function
-		results ? this.setState({ error: true, errorMessage: this.props.validate[results]['errorMessage'] }) : this.setState({ error: false }); //set error flag
+
+		//iterate through the results and see if it passes validation
+		Object.keys(results).map((index) => {
+			var passValidation = results[index]; //true: passed validation, false: failed validation
+			passValidation ? this.setState({ error: false }) : this.setState({ error: true }); //set error flag
+		});
 	}
 
 	render() {
@@ -37,7 +42,7 @@ class InputText extends React.Component {
         <Label forInput={ this.props.name }>Name</Label>
 				<input
 					type="text"
-					className={ "form-control input-lg" + " " + (this.state.error ? 'error' : '') }
+					className={ "form-control input-lg " + (this.state.error ? 'error' : '') }
 					id={ this.props.name }
 					name={ this.props.name }
 					placeholder={ this.props.placeholder }
@@ -47,19 +52,11 @@ class InputText extends React.Component {
 					required
 				/>
 
-				{ this.state.error ? <InputError errorMessage={ this.state.errorMessage } /> : '' }
+				{ this.state.error ? <InputError /> : '' }
       </FormRow>
 		)
 	}
 }
-/*
-InputText.defaultProps = {
-  data: {}
-};
 
-InputText.propTypes = {
-	data: React.PropTypes.object.isRequired
-}
-*/
 
 export default InputText;

@@ -18,54 +18,16 @@ class ContactForm extends React.Component {
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
-	getData(key) {
-		var fields = {
-			name: {
-				type: 'text',
-				label: 'Name',
-				class_name: 'form-control input-lg',
-				placeholder: 'col-md-12 showcase-1 border-b',
-				validation: [
-      		{
-        		rule: 'isRequired',
-        		errorMessage: 'This field is required.'
-      		}
-      	]
-			},
-			email: {
-				type: 'email',
-				label: 'Email',
-				class_name: 'form-control input-lg',
-				placeholder: 'col-md-12 showcase-1 border-b',
-				validation: [
-      		{
-        		rule: 'isRequired',
-        		errorMessage: 'This field is required.'
-      		},
-      		{
-        		rule: 'isEmail',
-        		errorMessage: 'Please enter a valid email address.'
-      		}
-      	]
-			}
-		}
-
-		return key ? fields[key] : fields;
-	}
-
 	handleBlur(value, validation) {
 		var isValid = true,
-			keys = Object.keys(validation),
-			results = null;
+			results = {};
 
-		for (var i = 0; i < keys.length; i++) {
-			var key = keys[i],
-				result = Validate[key](value);
+		Object.keys(validation).map((index) => {
+			var rule = validation[index].rule;
+			results[rule] = Validate[rule](value); //run method using string as name
+		});
 
-			if (!results) { //error found
-				return key; //return/break on first error
-			}
-		}
+		return results;
 	}
 
 	handleChange(e) {
@@ -111,14 +73,12 @@ class ContactForm extends React.Component {
 		            	name={ 'name' }
 		            	placeholder={ 'A name to address you...' }
 		            	value={ this.state.name.value }
-		            	validate={{
-		            		isRequired: {
+		            	validate={[
+		            		{
+			            		rule: 'isRequired',
 			            		errorMessage: 'This field is required.'
-		            		},
-			            	isEmail: {
-					        		errorMessage: 'Please enter a valid email address.'
-					      		}
-		            	}}
+		            		}
+		            	]}
 		            	onBlur={ this.handleBlur }
 		            	onChange={ this.handleChange }
 		            />
