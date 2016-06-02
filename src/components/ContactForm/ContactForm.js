@@ -27,7 +27,7 @@ class ContactForm extends React.Component {
 		for (var i = 0; i < keys.length; i++) {
 			var key = keys[i],
 				result = Validate[key](value);
-				
+
 			if (!result) { //error found
 				return key; //return/break on first error
 			}
@@ -119,22 +119,6 @@ class ContactForm extends React.Component {
 		            	{ this.state.message }
 		            </TextArea>
 
-								{/*
-		            <FormRow rowClass={ 'form-group row' }>
-		              <Label forInput={ 'name' }>Name</Label>
-									<input type="text" className="form-control input-lg" id="name" name="name" placeholder="A name to address you..." onChange={ (e) => { this.setState({ name: e.target.value }) }} value={ this.state.name } required />
-	              </FormRow>
-
-	              <FormRow rowClass={ 'form-group row' }>
-		              <Label forInput={ 'email' }>Email</Label>
-									<input type="email" className="form-control input-lg" id="email" name="email" placeholder="An email to contact you back on..." onChange={ (e) => { this.setState({ email: e.target.value }) }} value={ this.state.email } required />
-	              </FormRow>
-	              
-	              <FormRow rowClass={ 'form-group row' }>
-		              <Label forInput={ 'message' }>Message</Label>
-									<textarea className="form-control" id="message" name="message" placeholder="So, what's on your mind?" onChange={ (e) => { this.setState({ message: e.target.value }) }} value={ this.state.message } required></textarea>
-	              </FormRow>
-	              */}
 	              <FormRow rowClass={ 'btn-container text-center' }>
 									<button type="submit" className="btn btn-submit btn-lg btn-success-outline" data-loading-text="<i className='fa fa-circle-o-notch fa-spin'></i> Sending...">Send</button>
 								</FormRow>
