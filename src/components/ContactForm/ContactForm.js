@@ -2,6 +2,7 @@ import React from 'react';
 
 import FormRow from './FormRow';
 import InputText from './InputText';
+import TextArea from './TextArea';
 import Validate from './../Helpers/Validate'
 
 class ContactForm extends React.Component {
@@ -9,48 +10,13 @@ class ContactForm extends React.Component {
 		super(props);
 
 		this.state = {
-			name: {
-				value: ''
-			}
+			name: '',
+			email: '',
+			message: ''
 		};
 
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
-	}
-
-	getData(key) {
-		var fields = {
-			name: {
-				type: 'text',
-				label: 'Name',
-				class_name: 'form-control input-lg',
-				placeholder: 'col-md-12 showcase-1 border-b',
-				validation: [
-      		{
-        		rule: 'isRequired',
-        		errorMessage: 'This field is required.'
-      		}
-      	]
-			},
-			email: {
-				type: 'email',
-				label: 'Email',
-				class_name: 'form-control input-lg',
-				placeholder: 'col-md-12 showcase-1 border-b',
-				validation: [
-      		{
-        		rule: 'isRequired',
-        		errorMessage: 'This field is required.'
-      		},
-      		{
-        		rule: 'isEmail',
-        		errorMessage: 'Please enter a valid email address.'
-      		}
-      	]
-			}
-		}
-
-		return key ? fields[key] : fields;
 	}
 
 	handleBlur(value, validation) {
@@ -61,8 +27,8 @@ class ContactForm extends React.Component {
 		for (var i = 0; i < keys.length; i++) {
 			var key = keys[i],
 				result = Validate[key](value);
-
-			if (!results) { //error found
+				
+			if (!result) { //error found
 				return key; //return/break on first error
 			}
 		}
@@ -88,9 +54,9 @@ class ContactForm extends React.Component {
 		//#TODO send request to server
 
 		this.setState({
-			name: {
-				value: ''
-			}
+			name: '',
+			email: '',
+			message: ''
 		});
 	}
 
@@ -110,7 +76,22 @@ class ContactForm extends React.Component {
 		            <InputText
 		            	name={ 'name' }
 		            	placeholder={ 'A name to address you...' }
-		            	value={ this.state.name.value }
+		            	value={ this.state.name }
+		            	class_name={ 'form-control input-lg' }
+		            	validate={{
+		            		isRequired: {
+			            		errorMessage: 'This field is required.'
+		            		}
+		            	}}
+		            	onBlur={ this.handleBlur }
+		            	onChange={ this.handleChange }
+		            />
+
+		            <InputText
+		            	name={ 'email' }
+		            	placeholder={ 'An email to contact you back on...' }
+		            	value={ this.state.email }
+		            	class_name={ 'form-control input-lg' }
 		            	validate={{
 		            		isRequired: {
 			            		errorMessage: 'This field is required.'
@@ -122,6 +103,21 @@ class ContactForm extends React.Component {
 		            	onBlur={ this.handleBlur }
 		            	onChange={ this.handleChange }
 		            />
+
+		            <TextArea
+		            	name={ 'message' }
+		            	placeholder={ "So, what's on your mind?" }
+		            	class_name={ 'form-control' }
+		            	validate={{
+		            		isRequired: {
+			            		errorMessage: 'This field is required.'
+		            		}
+		            	}}
+		            	onBlur={ this.handleBlur }
+		            	onChange={ this.handleChange }
+		            >
+		            	{ this.state.message }
+		            </TextArea>
 
 								{/*
 		            <FormRow rowClass={ 'form-group row' }>

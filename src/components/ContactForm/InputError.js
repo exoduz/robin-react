@@ -2,11 +2,17 @@ import React from 'react';
 
 class InputError extends React.Component {
 	render() {
-		return (
-			<label id="name-error" className="error" for="name">This field is required.</label>
-		)
+		return <label id={ this.props.forInput + '-error' } className="error" for={ this.props.forInput }>{ this.props.children }</label>;
 	}
 }
 
+
+InputError.defaultProps = {
+  forInput: ''
+};
+
+InputError.propTypes = {
+	forInput: React.PropTypes.string.isRequired
+}
 
 export default InputError;

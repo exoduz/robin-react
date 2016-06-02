@@ -4,7 +4,7 @@ import FormRow from './FormRow';
 import Label from './Label';
 import InputError from './InputError';
 
-class InputText extends React.Component {
+class TextArea extends React.Component {
 	constructor(props) {
 		super(props);
 
@@ -35,13 +35,12 @@ class InputText extends React.Component {
 		return (
 			<FormRow rowClass={ 'form-group row' }>
         <Label forInput={ this.props.name }>Name</Label>
-				<input
-					type="text"
+				<textarea
 					className={ this.props.class_name + " " + (this.state.error ? 'error' : '') }
 					id={ this.props.name }
 					name={ this.props.name }
-					placeholder={ this.props.placeholder }
 					value={ this.state.value }
+					placeholder={ this.props.placeholder }
 					onChange={ this.handleChange }
 					onBlur={ this.handleBlur }
 					required={ 'isRequired' in this.props.validate ? 'required' : '' } //isRequired tag present, output HTML5 tag
@@ -53,13 +52,13 @@ class InputText extends React.Component {
 	}
 }
 
-InputText.defaultProps = {
+TextArea.defaultProps = {
   name: ''
 };
 
-InputText.propTypes = {
+TextArea.propTypes = {
 	name: React.PropTypes.string.isRequired,
 	onChange: React.PropTypes.func.isRequired,
 }
 
-export default InputText;
+export default TextArea;
