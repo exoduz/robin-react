@@ -4,7 +4,7 @@ import ColumnMD4 from './../Helpers/ColumnMD4';
 import ProgressBar from './../Helpers/ProgressBar';
 
 class Skills extends React.Component {
-	getData(obj, key) {
+	_getData(obj, key) {
 		var skills = {
 			programming: {
 				programming1: { name: 'HTML5', class_name: 'html', level: 99 },
@@ -45,7 +45,7 @@ class Skills extends React.Component {
 	}
 
 	renderProgressBar(obj, key) {
-		var data = this.getData(obj, key);
+		var data = this._getData(obj, key);
 		return <ProgressBar key={ key } type={ 'skills' } data={ data } />
 	}
 
@@ -60,27 +60,27 @@ class Skills extends React.Component {
 
 		        <ColumnMD4>
 		          <h3>Programming</h3>
-		          { Object.keys(this.getData('programming')).map((key) => this.renderProgressBar('programming', key)) }
+		          { Object.keys(this._getData('programming')).map((key) => this.renderProgressBar('programming', key)) }
 
 							<h3>Database</h3>
-		          { Object.keys(this.getData('database')).map((key) => this.renderProgressBar('database', key)) }
+		          { Object.keys(this._getData('database')).map((key) => this.renderProgressBar('database', key)) }
 		        </ColumnMD4>{/* .col-md-4 */}
 
 		        <ColumnMD4>
 		          <h3>Frameworks</h3>
-	            { Object.keys(this.getData('frameworks')).map((key) => this.renderProgressBar('frameworks', key)) }
+	            { Object.keys(this._getData('frameworks')).map((key) => this.renderProgressBar('frameworks', key)) }
 	            <h4>... and others</h4>
 
 		          <h3>Web Server</h3>
-		          { Object.keys(this.getData('webserver')).map((key) => this.renderProgressBar('webserver', key)) }
+		          { Object.keys(this._getData('webserver')).map((key) => this.renderProgressBar('webserver', key)) }
 		        </ColumnMD4>
 
 		        <ColumnMD4>
 		          <h3>Operating Systems</h3>
-		          { Object.keys(this.getData('os')).map((key) => this.renderProgressBar('os', key)) }
+		          { Object.keys(this._getData('os')).map((key) => this.renderProgressBar('os', key)) }
 
 		          <h3>Software</h3>
-		          { Object.keys(this.getData('software')).map((key) => this.renderProgressBar('software', key)) }
+		          { Object.keys(this._getData('software')).map((key) => this.renderProgressBar('software', key)) }
 		        </ColumnMD4>
 		      </div>{/* .row */}
 

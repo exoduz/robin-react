@@ -3,7 +3,12 @@ import React from 'react';
 import TimelineContent from './TimelineContent';
 
 class Timeline extends React.Component {
-	getData(key) {
+	
+	/**
+	 All data stored here
+	 @param key { string } Key to return part of object
+	*/
+	_getData(key) {
 		var timeline = {
 			timeline1: {
 				type: 'work',
@@ -113,7 +118,7 @@ class Timeline extends React.Component {
 	}
 
 	renderTimeline(key) {
-		var data = this.getData(key);
+		var data = this._getData(key);
 		return <TimelineContent key={ key } data={ data } />;
 	}
 
@@ -126,7 +131,7 @@ class Timeline extends React.Component {
 		          <h2 className="text-center">Professional Experience</h2>
 
 		          <div id="timeline-container">
-								{ Object.keys(this.getData()).map(key => this.renderTimeline(key)) }
+								{ Object.keys(this._getData()).map(key => this.renderTimeline(key)) }
 		          </div>{/* .timeline-container */}
 		        </div>{/* .col-md-12 */}
 		      </div>{/* .row */}

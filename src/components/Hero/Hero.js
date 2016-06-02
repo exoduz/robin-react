@@ -4,7 +4,12 @@ import Introduction from './Introduction';
 import Showcase from './Showcase';
 
 class Hero extends React.Component {
-	getData(key) {
+	
+	/**
+	 All data stored here
+	 @param key { string } Key to return part of object
+	*/
+	_getData(key) {
 		var showcase = {
 			showcase1: {
 				class_name: 'col-md-12 showcase-1 border-b',
@@ -87,9 +92,9 @@ class Hero extends React.Component {
 	}
 
 	render() {
-		var showcase1 = this.getData('showcase1'),
-			showcase2 = this.getData('showcase2'),
-			showcase3 = this.getData('showcase3');
+		var showcase1 = this._getData('showcase1'),
+			showcase2 = this._getData('showcase2'),
+			showcase3 = this._getData('showcase3');
 
 		return (
 		  <section id="hero">

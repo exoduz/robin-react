@@ -9,10 +9,7 @@ class InputText extends React.Component {
 		super(props);
 
 		this.state = {
-			value: this.props.value || '',
-			field: '',
-			error: false,
-			errorMessage: ''
+			value: this.props.value || ''
 		};
 
 		this.handleChange = this.handleChange.bind(this);
@@ -27,8 +24,7 @@ class InputText extends React.Component {
 	handleBlur(e) {
 		var validate = this.props.validate,
 			result = '';
-		result = this.props.onBlur(e.target.value, validate); //pass value and validation methods to parent onBlur function
-		result ? this.setState({ field: this.props,name, error: true, errorMessage: this.props.validate[result]['errorMessage'] }) : this.setState({ field: '', error: false, errorMessage: '' }); //set error flag
+		result = this.props.onBlur(this.props.name, e.target.value, validate); //pass value and validation methods to parent onBlur function
 	}
 
 	render() {
@@ -37,7 +33,7 @@ class InputText extends React.Component {
         <Label forInput={ this.props.name }>Name</Label>
 				<input
 					type="text"
-					className={ this.props.class_name + " " + (this.state.error ? 'error' : '') }
+					className={ this.props.class_name + " " + (!this.props.valid ? 'error' : '') }
 					id={ this.props.name }
 					name={ this.props.name }
 					placeholder={ this.props.placeholder }
@@ -47,7 +43,7 @@ class InputText extends React.Component {
 					required={ 'isRequired' in this.props.validate ? 'required' : '' } //isRequired tag present, output HTML5 tag
 				/>
 
-				{ this.state.error ? <InputError forInput={ this.props.name }>{ this.state.errorMessage }</InputError> : '' }
+				{ !this.props.valid ? <InputError forInput={ this.props.name }>{ this.props.errorMessage }</InputError> : '' }
       </FormRow>
 		)
 	}
