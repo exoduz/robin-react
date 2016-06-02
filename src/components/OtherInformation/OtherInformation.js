@@ -1,7 +1,7 @@
 import React from 'react';
 
-import ColumnMD4 from '../Helpers/ColumnMD4';
-import ProgressBar from '../Helpers/ProgressBar';
+import ColumnMD4 from './../Helpers/ColumnMD4';
+import ProgressBar from './../Helpers/ProgressBar';
 
 class OtherInformation extends React.Component {
 	getData(key) {

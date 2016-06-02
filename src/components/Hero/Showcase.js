@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Image from '../Helpers/Image';
-import ExternalLink from '../Helpers/ExternalLink';
+import ExternalLink from './../Helpers/ExternalLink';
 
 class Showcase extends React.Component {
 	renderLink(obj, key) {

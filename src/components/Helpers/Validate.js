@@ -4,8 +4,7 @@ let Validate = {
   */
   isRequired: function(value) {
     var ret = true;
-    value.length > 0 ? ret = true : ret = false;
-
+    value.length > 0 ? ret = true : ret = !ret;
     return ret;
   },
 

@@ -2,50 +2,57 @@ import React from 'react';
 
 import FormRow from './FormRow';
 import InputText from './InputText';
-import Validate from '../Helpers/Validate'
+import Validate from './../Helpers/Validate'
 
 class ContactForm extends React.Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
-			name: '',
-			email: '',
-			message: ''
+			name: {
+				value: ''
+			}
 		};
 
+		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
 	handleBlur(value, validation) {
-		var isValid = true;
+		var isValid = true,
+			results = {};
 
-		validation.map((validate) => {
-			if (validate === 'isRequired') {
-				isValid = Validate.isRequired(value);
-			}
-
-			if (validate === 'isEmail') {
-				isValid = Validate.isEmail(value);
-			}
+		Object.keys(validation).map((index) => {
+			var rule = validation[index].rule;
+			results[rule] = Validate[rule](value); //run method using string as name
 		});
+
+		return results;
+	}
+
+	handleChange(e) {
+		var name = e.target.name,
+			value = e.target.value;
+		
+		this.setState({ [name]: { value: value } });
 	}
 
 	handleSubmit(e) {
 		e.preventDefault();
 
-		var name = this.state.name.trim(),
-			email = this.state.email.trim(),
-			message = this.state.message.trim();
-	
+		var name = this.state.name.value.trim(),
+			email = this.state.email.value.trim(),
+			message = this.state.message.value.trim();
+		
+		//#TODO validate again on submit pressed
 		if (!name || !email || !message) { return; }
 
 		//#TODO send request to server
 
 		this.setState({
-			name: '',
-			email: '',
-			message: ''
+			name: {
+				value: ''
+			}
 		});
 	}
 
@@ -62,7 +69,19 @@ class ContactForm extends React.Component {
 		          <form id="home-contact-form" onSubmit={ this.handleSubmit }>
 		            <h4>I need all the following information from you.</h4>
 		            
-		            <InputText name={ 'name' } placeholder={ 'A name to address you...' } value={ this.state.name } validate={ ['isRequired', 'isEmail'] } onBlur={ this.handleBlur } />
+		            <InputText
+		            	name={ 'name' }
+		            	placeholder={ 'A name to address you...' }
+		            	value={ this.state.name.value }
+		            	validate={[
+		            		{
+			            		rule: 'isRequired',
+			            		errorMessage: 'This field is required.'
+		            		}
+		            	]}
+		            	onBlur={ this.handleBlur }
+		            	onChange={ this.handleChange }
+		            />
 
 								{/*
 		            <FormRow rowClass={ 'form-group row' }>
