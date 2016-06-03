@@ -25,7 +25,8 @@ class ContactForm extends React.Component {
 				value: '',
 				valid: true,
 				errorMessage: ''
-			}
+			},
+			modified: false
 		};
 
 		this.handleBlur = this.handleBlur.bind(this);
@@ -89,15 +90,17 @@ class ContactForm extends React.Component {
 			var rule = rules[i],
 				result = Validate[rule](value);
 
-			if (!result) { //error found
-				this.setState({
+			var newState = update(
+				this.state, {
 					[field]: {
-						valid: false,
-						errorMessage: this._getData(field).validation[rule].errorMessage //get error message
+						valid: { $set: (result ? true : false) },
+						errorMessage: { $set: (result ? '' : this._getData(field).validation[rule].errorMessage) } //get error message		
 					}
-				});
-				return rule; //return/break on first error
-			}
+				}
+			);
+			this.setState(newState);
+
+			return result ? '' : rule; //return/break on first error
 		}
 	}
 
@@ -106,29 +109,60 @@ class ContactForm extends React.Component {
 			value = e.target.value;
 
 		//use immutability-helper to update value without losing the others in the object
-		//http://stackoverflow.com/a/24900248/3940083
-		var newState = update(this.state[name], { value: { $set: value} });
+		//also update modified flag
+		//Problem: http://stackoverflow.com/questions/24898012/react-js-setstate-overwriting-not-merging
+		//Solution: http://stackoverflow.com/a/24900248/3940083
+		var newState = update(this.state, {
+			[name]: {
+				value:
+				{ $set: value }
+			},
+			'modified': { $set: true }
+		});
 		this.setState(newState);
-		console.log(this.state.name);
 	}
 
 	handleSubmit(e) {
 		e.preventDefault();
-
-		//#TODO validate again on submit pressed
-		//check state is there's error
-		//check against data, if there's error, send it back to form
-
-		/*
+		
 		var name = this.state.name.value.trim(),
 			email = this.state.email.value.trim(),
 			message = this.state.message.value.trim();
-		
-		if (!name || !email || !message) { return; }
-		*/
 
-		//#TODO send request to server
-		/*
+		if (!this.state.modified || !name || !email || message) { //if default state or any field empty then return
+			return;
+		} else { //valid and send
+
+			var form = $("#home-contact-form"),
+				submitButton = $("#contact .btn-submit");
+				submitButton.button('reset'),
+				data = { name: name, email: email, message: message },  //values
+				url = 'send_mail.php';
+
+			submitButton.button('loading');
+
+    	$.post(
+		    url,
+		    data,
+		    function(response){
+	        if (response === "ok") {
+	        	//success
+	        	form.reset();
+	        	submitButton.text("Email Sent").addClass('success');
+	        	setTimeout(function() {
+	        		submitButton.removeClass('success').button('reset'); //reset text after 1.5secs
+	        	}, 1500);
+	        } else {
+	        	//uh oh!
+	        	submitButton.html("Something went wrong. Please try again.").addClass('error');
+	        	setTimeout(function() {
+	        		submitButton.removeClass('error').button('reset'); //reset text after 1.5secs
+	        	}, 1500);
+	        }
+		    }
+			);
+		}
+
 		this.setState({
 			name: {
 				value: '',
@@ -144,9 +178,9 @@ class ContactForm extends React.Component {
 				value: '',
 				valid: true,
 				errorMessage: ''
-			}
+			},
+			modified: false
 		});
-		*/
 	}
 
 	/**
@@ -173,6 +207,7 @@ class ContactForm extends React.Component {
 		} else {
 			ret = <InputText
 				key={ data.fieldName }
+				type={ data.type }
       	name={ data.fieldName }
       	placeholder={ data.placeholder }
       	value={ this.state[key].value }

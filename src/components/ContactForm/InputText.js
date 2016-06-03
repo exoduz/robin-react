@@ -16,17 +16,15 @@ class InputText extends React.Component {
 		this.handleBlur = this.handleBlur.bind(this);
 	}
 
-	handleChange(e) {
-		e.target.valid = this.props.valid;
-		e.target.errorMessage = this.props.errorMessage;
-		this.props.onChange(e);
-		this.setState({ value: e.target.value })
-	}
-
 	handleBlur(e) {
 		var validate = this.props.validate,
 			result = '';
 		result = this.props.onBlur(this.props.name, e.target.value, validate); //pass value and validation methods to parent onBlur function
+	}
+
+	handleChange(e) {
+		this.props.onChange(e);
+		this.setState({ value: e.target.value })
 	}
 
 	render() {
@@ -34,14 +32,12 @@ class InputText extends React.Component {
 			<FormRow rowClass={ 'form-group row' }>
         <Label forInput={ this.props.name }>Name</Label>
 				<input
-					type="text"
+					type={ this.props.type }
 					className={ this.props.class_name + " " + (!this.props.valid ? 'error' : '') }
 					id={ this.props.name }
 					name={ this.props.name }
 					placeholder={ this.props.placeholder }
 					value={ this.state.value }
-					data-valid={ this.props.valid }
-					data-errorMessage={ this.props.errorMessage }
 					onChange={ this.handleChange }
 					onBlur={ this.handleBlur }
 					required={ 'isRequired' in this.props.validate ? 'required' : '' } //isRequired tag present, output HTML5 tag
@@ -54,10 +50,12 @@ class InputText extends React.Component {
 }
 
 InputText.defaultProps = {
+	type: 'text',
   name: ''
 };
 
 InputText.propTypes = {
+	type: React.PropTypes.string.isRequired,
 	name: React.PropTypes.string.isRequired,
 	onChange: React.PropTypes.func.isRequired,
 }

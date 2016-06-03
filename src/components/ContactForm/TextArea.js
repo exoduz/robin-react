@@ -16,15 +16,15 @@ class TextArea extends React.Component {
 		this.handleBlur = this.handleBlur.bind(this);
 	}
 
-	handleChange(e) {
-		this.props.onChange(e);
-		this.setState({ value: e.target.value })
-	}
-
 	handleBlur(e) {
 		var validate = this.props.validate,
 			result = '';
 		result = this.props.onBlur(this.props.name, e.target.value, validate); //pass value and validation methods to parent onBlur function
+	}
+	
+	handleChange(e) {
+		this.props.onChange(e);
+		this.setState({ value: e.target.value })
 	}
 
 	render() {
@@ -37,8 +37,6 @@ class TextArea extends React.Component {
 					name={ this.props.name }
 					placeholder={ this.props.placeholder }
 					value={ this.state.value }
-					valid={ this.props.valid }
-					errorMessage={ this.props.errorMessage }
 					onChange={ this.handleChange }
 					onBlur={ this.handleBlur }
 					required={ 'isRequired' in this.props.validate ? 'required' : '' } //isRequired tag present, output HTML5 tag
