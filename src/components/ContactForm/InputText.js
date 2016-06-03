@@ -17,6 +17,8 @@ class InputText extends React.Component {
 	}
 
 	handleChange(e) {
+		e.target.valid = this.props.valid;
+		e.target.errorMessage = this.props.errorMessage;
 		this.props.onChange(e);
 		this.setState({ value: e.target.value })
 	}
@@ -38,6 +40,8 @@ class InputText extends React.Component {
 					name={ this.props.name }
 					placeholder={ this.props.placeholder }
 					value={ this.state.value }
+					data-valid={ this.props.valid }
+					data-errorMessage={ this.props.errorMessage }
 					onChange={ this.handleChange }
 					onBlur={ this.handleBlur }
 					required={ 'isRequired' in this.props.validate ? 'required' : '' } //isRequired tag present, output HTML5 tag

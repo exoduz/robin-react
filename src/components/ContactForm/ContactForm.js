@@ -1,4 +1,5 @@
 import React from 'react';
+import update from 'immutability-helper';
 
 import FormRow from './FormRow';
 import InputText from './InputText';
@@ -101,26 +102,33 @@ class ContactForm extends React.Component {
 	}
 
 	handleChange(e) {
-		//#TODO CHANGE
 		var name = e.target.name,
 			value = e.target.value;
-		
-		this.setState({ [name]: { value: value } });
+
+		//use immutability-helper to update value without losing the others in the object
+		//http://stackoverflow.com/a/24900248/3940083
+		var newState = update(this.state[name], { value: { $set: value} });
+		this.setState(newState);
+		console.log(this.state.name);
 	}
 
 	handleSubmit(e) {
 		e.preventDefault();
 
-		//#TODO CHANGE
-		var name = this.state.name.trim(),
-			email = this.state.email.trim(),
-			message = this.state.message.trim();
-		
 		//#TODO validate again on submit pressed
+		//check state is there's error
+		//check against data, if there's error, send it back to form
+
+		/*
+		var name = this.state.name.value.trim(),
+			email = this.state.email.value.trim(),
+			message = this.state.message.value.trim();
+		
 		if (!name || !email || !message) { return; }
+		*/
 
 		//#TODO send request to server
-
+		/*
 		this.setState({
 			name: {
 				value: '',
@@ -138,6 +146,7 @@ class ContactForm extends React.Component {
 				errorMessage: ''
 			}
 		});
+		*/
 	}
 
 	/**
@@ -193,53 +202,6 @@ class ContactForm extends React.Component {
 		            <h4>I need all the following information from you.</h4>
 		            
 								{ Object.keys(this._getData()).map(key => this.renderFields(key)) }		            
-
-		            {/*
-
-		            <InputText
-		            	name={ 'name' }
-		            	placeholder={ 'A name to address you...' }
-		            	value={ this.state.name.value }
-		            	class_name={ this._getData('name', '') }
-		            	validate={ this.getData.name.validation }
-		            	valid={ this.state.name.valid }
-		            	errorMessage={ this.state.name.errorMessage }
-		            	onBlur={ this.handleBlur }
-		            	onChange={ this.handleChange }
-		            />
-
-		            <InputText
-		            	name={ 'email' }
-		            	placeholder={ 'An email to contact you back on...' }
-		            	value={ this.state.email }
-		            	class_name={ 'form-control input-lg' }
-		            	validate={{
-		            		isRequired: {
-			            		errorMessage: 'This field is required.'
-		            		},
-			            	isEmail: {
-					        		errorMessage: 'Please enter a valid email address.'
-					      		}
-		            	}}
-		            	onBlur={ this.handleBlur }
-		            	onChange={ this.handleChange }
-		            />
-
-		            <TextArea
-		            	name={ 'message' }
-		            	placeholder={ "So, what's on your mind?" }
-		            	value={ this.state.message }
-		            	class_name={ 'form-control' }
-		            	validate={{
-		            		isRequired: {
-			            		errorMessage: 'This field is required.'
-		            		}
-		            	}}
-		            	onBlur={ this.handleBlur }
-		            	onChange={ this.handleChange }
-		            >
-		            </TextArea>
-		            */}
 
 	              <FormRow rowClass={ 'btn-container text-center' }>
 									<button type="submit" className="btn btn-submit btn-lg btn-success-outline" data-loading-text="<i className='fa fa-circle-o-notch fa-spin'></i> Sending...">Send</button>

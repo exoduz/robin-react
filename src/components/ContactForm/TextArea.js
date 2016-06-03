@@ -35,8 +35,10 @@ class TextArea extends React.Component {
 					className={ this.props.class_name + " " + (!this.props.valid ? 'error' : '') }
 					id={ this.props.name }
 					name={ this.props.name }
-					value={ this.state.value }
 					placeholder={ this.props.placeholder }
+					value={ this.state.value }
+					valid={ this.props.valid }
+					errorMessage={ this.props.errorMessage }
 					onChange={ this.handleChange }
 					onBlur={ this.handleBlur }
 					required={ 'isRequired' in this.props.validate ? 'required' : '' } //isRequired tag present, output HTML5 tag

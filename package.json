@@ -21,6 +21,7 @@
   "description": "Robin's personal website",
   "main": "gulpfile.js",
   "dependencies": {
+    "immutability-helper": "^2.0.0",
     "react": "^15.1.0",
     "react-dom": "^15.1.0"
   },
