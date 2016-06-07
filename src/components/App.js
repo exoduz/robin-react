@@ -1,5 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import $ from 'jquery';
+window.jQuery = $;
+window.$ = $;
+
+//CSS files
+require('normalize-css');
+require('../../node_modules/bootstrap/dist/css/bootstrap.css');
+require('../../node_modules/font-awesome/css/font-awesome.css');
+require('./../css/style.css');
+require('./../css/print.css');
 
 import Hero from './Hero/Hero';
 import Skills from './Skills/Skills';

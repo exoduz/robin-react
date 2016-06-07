@@ -4,8 +4,8 @@
 
 @font-face {
   font-family: HelveticaNeue-Local;
-  src: url('fonts/Helvetica-Neue-webfont.ttf'),
-       url('fonts/Helvetica-Neue-webfont.eot'); /* IE9 */
+  src: url('/src/css/fonts/Helvetica-Neue-webfont.ttf'),
+       url('/src/css/fonts/Helvetica-Neue-webfont.eot'); /* IE9 */
 }
 
 html, body {

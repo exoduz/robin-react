@@ -1,17 +1,12 @@
-var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
-var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
-  template: __dirname + '/src/index.html',
-  filename: 'index.html',
-  inject: 'body'
-});
 module.exports = {
   entry: [
     './src/components/App.js'
   ],
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "build"),
     filename: "js/app.js",
   },
   module: {
@@ -24,8 +19,24 @@ module.exports = {
         query: {
           presets: ['es2015', 'react']
         }
-      }
+      },
+      //Boostrap 
+      { test: /\.css$/, loader: 'style-loader!css-loader' },
+      { test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/font-woff' },
+      { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/octet-stream' },
+      { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file' },
+      { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=image/svg+xml' }
+
     ]
   },
-  plugins: [HTMLWebpackPluginConfig]
+	resolve: {
+		extensions: ['', '.js', '.json']
+	},
+  plugins: [
+  	new HtmlWebpackPlugin({
+		  template: __dirname + '/src/index.html',
+		  filename: 'index.html',
+		  inject: 'body'
+		})
+	]
 };
