@@ -393,6 +393,7 @@ header {
   box-shadow: none;
   font-size: 1.3em;
   font-weight: 300;
+  line-height: 1.428571429;
   text-align: left;
 }
   #skills .progress-bar.html { width: 95%; }
@@ -956,6 +957,7 @@ header {
   box-shadow: none;
   font-size: 1.3em;
   font-weight: 300;
+  line-height: 1.428571429;
   text-align: left;
 }
   #other-info .progress-bar.english { width: 99%}
