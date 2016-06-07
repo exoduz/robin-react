@@ -1,5 +1,6 @@
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
   entry: [
@@ -21,7 +22,7 @@ module.exports = {
         }
       },
       //Boostrap 
-      { test: /\.css$/, loader: 'style-loader!css-loader' },
+      { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader') },
       { test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/font-woff' },
       { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/octet-stream' },
       { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file' },
@@ -37,6 +38,7 @@ module.exports = {
 		  template: __dirname + '/src/index.html',
 		  filename: 'index.html',
 		  inject: 'body'
-		})
+		}),
+		new ExtractTextPlugin("style.css", { allChunks: false })
 	]
 };

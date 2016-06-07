@@ -1,3 +1,6 @@
+/**
+ * Robin Website v1.0.0 (https://robinjulius.com)
+ */
 @charset "utf-8";
 
 * { margin: 0; padding: 0; }
@@ -10,7 +13,7 @@
 
 html, body {
   color: #1e2022;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;  
+  font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 18px;
   font-weight: 300;
   height: 100%;
