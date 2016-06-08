@@ -23,7 +23,7 @@ import Skills from './Skills/Skills';
 import Timeline from './Timeline/Timeline';
 import OtherInformation from './OtherInformation/OtherInformation';
 import Social from './Social/Social';
-import ContactForm from './ContactForm/ContactForm';
+import Contact from './Contact/ContactForm';
 import Thanks from './Thanks/Thanks';
 import Footer from './Layout/Footer';
 
@@ -36,7 +36,7 @@ class App extends React.Component {
 				<Timeline />
 				<OtherInformation />
 				<Social />
-				<ContactForm />
+				<Contact />
 				<Thanks />
 				<Footer />
 			</div>
