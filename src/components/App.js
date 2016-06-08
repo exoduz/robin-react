@@ -8,16 +8,12 @@ import $ from 'jquery';
 window.jQuery = window.$ = $;
 require('bootstrap');
 require('../../node_modules/waypoints/lib/jquery.waypoints.js');
-require('./main.js');
+require('../js/main.js');
 
 /**
  CSS
 */
-require('normalize-css');
-require('./../../node_modules/bootstrap/dist/css/bootstrap.css');
-require('./../../node_modules/font-awesome/css/font-awesome.css');
-require('./../css/style.css');
-require('./../css/print.css');
+require('../css/main.css');
 
 /**
  React components
