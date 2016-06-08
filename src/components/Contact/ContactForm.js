@@ -130,6 +130,9 @@ class ContactForm extends React.Component {
 			message = this.state.message.value.trim();
 
 		if (!this.state.modified || !name || !email || message) { //if default state or any field empty then return
+			//validate
+			alert(111);
+
 			return;
 		} else { //valid and send
 

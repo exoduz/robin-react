@@ -2,10 +2,11 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const validate = require('webpack-validator'); //validates webpack schema
 
-module.exports = {
+module.exports = validate({
   entry: [
-    './src/components/App.js'
+    path.join(__dirname, 'src', 'components', 'App.js')
   ],
   output: {
     path: path.resolve(__dirname, "build"),
@@ -42,14 +43,14 @@ module.exports = {
     ]
   },
 	resolve: {
-		extensions: ['', '.js', 'jsx', '.json']
+		extensions: ['', '.js', '.jsx', '.json']
 	},
   plugins: [
   	new HtmlWebpackPlugin({
-		  template: __dirname + '/src/index.html',
+		  template: path.join(__dirname, 'src', 'index.html'),
 		  filename: 'index.html',
 		  inject: 'body'
 		}),
 		new ExtractTextPlugin("css/style.min.css", { allChunks: false })
 	]
-};
+});
