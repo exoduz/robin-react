@@ -8,7 +8,7 @@ import $ from 'jquery';
 window.jQuery = window.$ = $;
 require('bootstrap');
 require('../../node_modules/waypoints/lib/jquery.waypoints.js');
-require('../js/main.js');
+require('../js/app.js');
 
 /**
  CSS
@@ -44,4 +44,4 @@ class App extends React.Component {
 	}
 }
 
-ReactDOM.render(<App />, document.querySelector('#main'));
+export default App;

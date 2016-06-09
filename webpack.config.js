@@ -6,7 +6,7 @@ const validate = require('webpack-validator'); //validates webpack schema
 
 module.exports = validate({
   entry: [
-    path.join(__dirname, 'src', 'components', 'App.js')
+    path.join(__dirname, 'src', 'main.js')
   ],
   output: {
     path: path.resolve(__dirname, "build"),
