@@ -25,8 +25,7 @@ class ContactForm extends React.Component {
 				value: '',
 				valid: true,
 				errorMessage: ''
-			},
-			modified: false
+			}
 		};
 
 		this.handleBlur = this.handleBlur.bind(this);
@@ -109,15 +108,13 @@ class ContactForm extends React.Component {
 			value = e.target.value;
 
 		//use immutability-helper to update value without losing the others in the object
-		//also update modified flag
 		//Problem: http://stackoverflow.com/questions/24898012/react-js-setstate-overwriting-not-merging
 		//Solution: http://stackoverflow.com/a/24900248/3940083
 		var newState = update(this.state, {
 			[name]: {
 				value:
 				{ $set: value }
-			},
-			'modified': { $set: true }
+			}
 		});
 		this.setState(newState);
 	}
@@ -128,10 +125,8 @@ class ContactForm extends React.Component {
 		var name = this.state.name.value.trim(),
 			email = this.state.email.value.trim(),
 			message = this.state.message.value.trim();
-
-		this.state.name.valid = false;
-		this.setState({ name: { valid: false } })
-		if (!this.state.modified || !name || !email || message) { //if default state or any field empty then return
+		
+		if (!name || !email || !message) { //if default state or any field empty then return
 			var fields = ['name', 'email', 'message'],
 				currentState = this.state;
 
@@ -149,19 +144,17 @@ class ContactForm extends React.Component {
 				}
 			}.bind(this));
 
-			console.log(this.state);
-
+			this.setState(currentState);
 			return;
 		}
-
+		
 		//valid so send email
-		var form = $("#home-contact-form"),
-			submitButton = $("#contact .btn-submit");
-			submitButton.button('reset'),
-			data = { name: name, email: email, message: message },  //values
+		var $form = $("#home-contact-form"),
+			$submitButton = $("#contact .btn-submit"),
+			data = JSON.parse(JSON.stringify({ name: name, email: email, message: message })),  //values
 			url = 'send_mail.php';
 
-		submitButton.button('loading');
+		$submitButton.button('loading');
 
   	$.post(
 	    url,
@@ -169,40 +162,39 @@ class ContactForm extends React.Component {
 	    function(response){
         if (response === "ok") {
         	//success
-        	form.reset();
-        	submitButton.text("Email Sent").addClass('success');
+        	$submitButton.text("Email Sent").addClass('success');
         	setTimeout(function() {
-        		submitButton.removeClass('success').button('reset'); //reset text after 1.5secs
+        		$submitButton.removeClass('success').button('reset'); //reset text after 1.5secs
         	}, 1500);
+
+        	this.setState({
+						name: {
+							value: '',
+							valid: true,
+							errorMessage: ''
+						},
+						email: {
+							value: '',
+							valid: true,
+							errorMessage: ''
+						},
+						message: {
+							value: '',
+							valid: true,
+							errorMessage: ''
+						}
+					});
+
+					$form.trigger('reset'); //reset form values
         } else {
         	//uh oh!
-        	submitButton.html("Something went wrong. Please try again.").addClass('error');
+        	$submitButton.html("Something went wrong. Please try again.").addClass('error');
         	setTimeout(function() {
-        		submitButton.removeClass('error').button('reset'); //reset text after 1.5secs
+        		$submitButton.removeClass('error').button('reset'); //reset text after 1.5secs
         	}, 1500);
         }
-	    }
+	    }.bind(this)
 		);
-
-		this.setState({
-			name: {
-				value: '',
-				valid: true,
-				errorMessage: ''
-			},
-			email: {
-				value: '',
-				valid: true,
-				errorMessage: ''
-			},
-			message: {
-				value: '',
-				valid: true,
-				errorMessage: ''
-			},
-			modified: false
-		});
-
 	}
 
 	/**
@@ -261,7 +253,7 @@ class ContactForm extends React.Component {
 								{ Object.keys(this._getData()).map(key => this.renderFields(key)) }		            
 
 	              <FormRow rowClass={ 'btn-container text-center' }>
-									<button type="submit" className="btn btn-submit btn-lg btn-success-outline" data-loading-text="<i className='fa fa-circle-o-notch fa-spin'></i> Sending...">Send</button>
+									<button type="submit" className="btn btn-submit btn-lg btn-success-outline" data-loading-text="Sending...">Send</button>
 								</FormRow>
 		          
 		          </form>
