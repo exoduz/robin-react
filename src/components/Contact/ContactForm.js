@@ -88,7 +88,7 @@ class ContactForm extends React.Component {
 		for (var i = 0; i < rules.length; i++) {
 			var rule = rules[i],
 				result = Validate[rule](value);
-
+			console.log(result);
 			var newState = update(
 				this.state, {
 					[field]: {
@@ -98,9 +98,9 @@ class ContactForm extends React.Component {
 				}
 			);
 			this.setState(newState);
-
-			return result ? '' : rule; //return/break on first error
 		}
+
+		return result ? '' : rule; //return/break on first error
 	}
 
 	handleChange(e) {
@@ -247,13 +247,13 @@ class ContactForm extends React.Component {
 		        </div>{/* .col-md-12 */}
 
 		        <div className="col-md-8 col-md-offset-2">
-		          <form id="home-contact-form" onSubmit={ this.handleSubmit }>
+		          <form id="home-contact-form" onSubmit={ this.handleSubmit } novalidate>
 		            <h4>I need all the following information from you.</h4>
 		            
 								{ Object.keys(this._getData()).map(key => this.renderFields(key)) }		            
 
 	              <FormRow rowClass={ 'btn-container text-center' }>
-									<button type="submit" className="btn btn-submit btn-lg btn-success-outline" data-loading-text="Sending...">Send</button>
+									<button type="submit" className="btn btn-submit btn-lg btn-success-outline" data-loading-text="Sending..." formnovalidate="formnovalidate">Send</button>
 								</FormRow>
 		          
 		          </form>

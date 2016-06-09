@@ -39,7 +39,6 @@ class TextArea extends React.Component {
 					value={ this.state.value }
 					onChange={ this.handleChange }
 					onBlur={ this.handleBlur }
-					novalidate
 				/>
 
 				{ !this.props.valid ? <InputError forInput={ this.props.name }>{ this.props.errorMessage }</InputError> : '' }
