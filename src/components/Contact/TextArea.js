@@ -39,7 +39,7 @@ class TextArea extends React.Component {
 					value={ this.state.value }
 					onChange={ this.handleChange }
 					onBlur={ this.handleBlur }
-					required={ 'isRequired' in this.props.validate ? 'required' : '' } //isRequired tag present, output HTML5 tag
+					novalidate
 				/>
 
 				{ !this.props.valid ? <InputError forInput={ this.props.name }>{ this.props.errorMessage }</InputError> : '' }

@@ -124,47 +124,65 @@ class ContactForm extends React.Component {
 
 	handleSubmit(e) {
 		e.preventDefault();
-		
+
 		var name = this.state.name.value.trim(),
 			email = this.state.email.value.trim(),
 			message = this.state.message.value.trim();
 
+		this.state.name.valid = false;
+		this.setState({ name: { valid: false } })
 		if (!this.state.modified || !name || !email || message) { //if default state or any field empty then return
-			//validate
-			alert(111);
+			var fields = ['name', 'email', 'message'],
+				currentState = this.state;
+
+			//validate fields on submit
+			fields.map(function(field) {
+				if (!currentState[field].value) {
+					currentState = update(
+						currentState, {
+							[field]: {
+								valid: { $set: false },
+								errorMessage: { $set: this._getData(field).validation.isRequired.errorMessage } //get error message		
+							}
+						}
+					);
+				}
+			}.bind(this));
+
+			console.log(this.state);
 
 			return;
-		} else { //valid and send
-
-			var form = $("#home-contact-form"),
-				submitButton = $("#contact .btn-submit");
-				submitButton.button('reset'),
-				data = { name: name, email: email, message: message },  //values
-				url = 'send_mail.php';
-
-			submitButton.button('loading');
-
-    	$.post(
-		    url,
-		    data,
-		    function(response){
-	        if (response === "ok") {
-	        	//success
-	        	form.reset();
-	        	submitButton.text("Email Sent").addClass('success');
-	        	setTimeout(function() {
-	        		submitButton.removeClass('success').button('reset'); //reset text after 1.5secs
-	        	}, 1500);
-	        } else {
-	        	//uh oh!
-	        	submitButton.html("Something went wrong. Please try again.").addClass('error');
-	        	setTimeout(function() {
-	        		submitButton.removeClass('error').button('reset'); //reset text after 1.5secs
-	        	}, 1500);
-	        }
-		    }
-			);
 		}
+
+		//valid so send email
+		var form = $("#home-contact-form"),
+			submitButton = $("#contact .btn-submit");
+			submitButton.button('reset'),
+			data = { name: name, email: email, message: message },  //values
+			url = 'send_mail.php';
+
+		submitButton.button('loading');
+
+  	$.post(
+	    url,
+	    data,
+	    function(response){
+        if (response === "ok") {
+        	//success
+        	form.reset();
+        	submitButton.text("Email Sent").addClass('success');
+        	setTimeout(function() {
+        		submitButton.removeClass('success').button('reset'); //reset text after 1.5secs
+        	}, 1500);
+        } else {
+        	//uh oh!
+        	submitButton.html("Something went wrong. Please try again.").addClass('error');
+        	setTimeout(function() {
+        		submitButton.removeClass('error').button('reset'); //reset text after 1.5secs
+        	}, 1500);
+        }
+	    }
+		);
 
 		this.setState({
 			name: {
@@ -184,6 +202,7 @@ class ContactForm extends React.Component {
 			},
 			modified: false
 		});
+
 	}
 
 	/**
