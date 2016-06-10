@@ -1,5 +1,6 @@
 //http://survivejs.com/webpack/introduction/
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const validate = require('webpack-validator'); //validates webpack schema
@@ -51,6 +52,11 @@ module.exports = validate({
 		  filename: 'index.html',
 		  inject: 'body'
 		}),
-		new ExtractTextPlugin("css/style.min.css", { allChunks: false })
+		new ExtractTextPlugin("css/style.min.css", { allChunks: false }),
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify("production") //development || production
+      }
+    })
 	]
 });
