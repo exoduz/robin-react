@@ -108,6 +108,7 @@ header {
 }
 #hero .intro {
   margin: 50px 35px;
+  font-size: 0.8rem;
 }
 #hero .tile {
   height: 100vh;
@@ -365,10 +366,10 @@ header {
 }
 
 #hero h1 { margin: 0; margin-bottom: 5px; font-size: 3rem; font-weight: 200; }
-#hero h2 { margin: 0; margin-bottom: 8px; font-size: 1.7rem; line-height: 1.3em; }
+#hero h2 { margin: 0; margin-bottom: 8px; font-size: 1.5rem; line-height: 1.2em; }
 
 #hero .tile h2 { color: #fff; font-size: 2.1rem; }
-#hero p { font-size: 1.1rem; }
+#hero p { font-size: 1rem; }
 
 @media (min-width: 1200px) and (max-width: 1550px) {
   #hero h1 { font-size: 1.8rem; }

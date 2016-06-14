@@ -40,7 +40,7 @@
     "waypoints": "^4.0.0"
   },
   "scripts": {
-    "start": "webpack-dev-server --progress --colors . --history-api-fallback content-base build/",
+    "start": "webpack-dev-server --progress --colors . --history-api-fallback --content-base build/",
     "build": "webpack -p --progress"
   }
 }
