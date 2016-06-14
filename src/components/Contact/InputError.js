@@ -2,7 +2,7 @@ import React from 'react';
 
 class InputError extends React.Component {
 	render() {
-		return <label id={ this.props.forInput + '-error' } className="error" for={ this.props.forInput }>{ this.props.children }</label>;
+		return <label id={ this.props.forInput + '-error' } className="error" htmlFor={ this.props.forInput }>{ this.props.children }</label>;
 	}
 }
 
