@@ -30,7 +30,7 @@ class InputText extends React.Component {
 	render() {
 		return (
 			<FormRow rowClass={ 'form-group row' }>
-        <Label forInput={ this.props.name }>Name</Label>
+        <Label forInput={ this.props.name }>{ this.props.name }</Label>
 				<input
 					type={ this.props.type }
 					className={ this.props.class_name + " " + (!this.props.valid ? 'error' : '') }

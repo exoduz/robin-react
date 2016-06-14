@@ -250,7 +250,7 @@ class ContactForm extends React.Component {
 		          <form id="home-contact-form" onSubmit={ this.handleSubmit } novalidate>
 		            <h4>I need all the following information from you.</h4>
 		            
-								{ Object.keys(this._getData()).map(key => this.renderFields(key)) }		            
+								{ Object.keys(this._getData()).map(key => this.renderFields(key)) }
 
 	              <FormRow rowClass={ 'btn-container text-center' }>
 									<button type="submit" className="btn btn-submit btn-lg btn-success-outline" data-loading-text="Sending..." formnovalidate="formnovalidate">Send</button>
