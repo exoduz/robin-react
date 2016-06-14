@@ -37,7 +37,7 @@ class ContactForm extends React.Component {
 	 All data stored here
 	 @param key { string } Key to return part of object
 	*/
-	_getData(key) {
+	_fields(key) {
 		var fields = {
 			name: {
 				type: 'text',
@@ -93,7 +93,7 @@ class ContactForm extends React.Component {
 				this.state, {
 					[field]: {
 						valid: { $set: (result ? true : false) },
-						errorMessage: { $set: (result ? '' : this._getData(field).validation[rule].errorMessage) } //get error message		
+						errorMessage: { $set: (result ? '' : this._fields(field).validation[rule].errorMessage) } //get error message		
 					}
 				}
 			);
@@ -137,7 +137,7 @@ class ContactForm extends React.Component {
 						currentState, {
 							[field]: {
 								valid: { $set: false },
-								errorMessage: { $set: this._getData(field).validation.isRequired.errorMessage } //get error message		
+								errorMessage: { $set: this._fields(field).validation.isRequired.errorMessage } //get error message		
 							}
 						}
 					);
@@ -202,7 +202,7 @@ class ContactForm extends React.Component {
 	 @param key { string } Key to return part of object
 	*/
 	renderFields(key) {
-		var data = this._getData(key),
+		var data = this._fields(key),
 			ret = null;
 
 		if (data.type === 'textarea') {
@@ -250,7 +250,7 @@ class ContactForm extends React.Component {
 		          <form id="home-contact-form" onSubmit={ this.handleSubmit } novalidate>
 		            <h4>I need all the following information from you.</h4>
 		            
-								{ Object.keys(this._getData()).map(key => this.renderFields(key)) }
+								{ Object.keys(this._fields()).map(key => this.renderFields(key)) }
 
 	              <FormRow rowClass={ 'btn-container text-center' }>
 									<button type="submit" className="btn btn-submit btn-lg btn-success-outline" data-loading-text="Sending..." formnovalidate="formnovalidate">Send</button>

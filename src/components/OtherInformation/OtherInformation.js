@@ -9,7 +9,7 @@ class OtherInformation extends React.Component {
 	 All data stored here
 	 @param key { string } Key to return part of object
 	*/
-	_getData(key) {
+	_content(key) {
 		var languages = {
 			lang1: { name: 'English', proficiency: 'Native', level: 99 },
 			lang2: { name: 'Indonesian', proficiency: 'Native', level: 99 },
@@ -22,7 +22,7 @@ class OtherInformation extends React.Component {
 	}
 
 	renderProgressBar(key) {
-		var data = this._getData(key);
+		var data = this._content(key);
 		return <ProgressBar key={ key } type={ 'languages' } data={ data } />;
 	}
 
@@ -37,7 +37,7 @@ class OtherInformation extends React.Component {
 
 		        <ColumnMD4>
 		        	<h3>Languages</h3>
-							{ Object.keys(this._getData()).map(key => this.renderProgressBar(key)) }
+							{ Object.keys(this._content()).map(key => this.renderProgressBar(key)) }
 		        </ColumnMD4>
 
 		        <ColumnMD4>

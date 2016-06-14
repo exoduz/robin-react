@@ -8,7 +8,7 @@ class Timeline extends React.Component {
 	 All data stored here
 	 @param key { string } Key to return part of object
 	*/
-	_getData(key) {
+	_content(key) {
 		var timeline = {
 			timeline1: {
 				type: 'work',
@@ -118,7 +118,7 @@ class Timeline extends React.Component {
 	}
 
 	renderTimeline(key) {
-		var data = this._getData(key);
+		var data = this._content(key);
 		return <TimelineContent key={ key } data={ data } />;
 	}
 
@@ -131,7 +131,7 @@ class Timeline extends React.Component {
 		          <h2 className="text-center">Professional Experience</h2>
 
 		          <div id="timeline-container">
-								{ Object.keys(this._getData()).map(key => this.renderTimeline(key)) }
+								{ Object.keys(this._content()).map(key => this.renderTimeline(key)) }
 		          </div>{/* .timeline-container */}
 		        </div>{/* .col-md-12 */}
 		      </div>{/* .row */}
