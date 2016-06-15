@@ -794,6 +794,40 @@ header {
   }
 }
 
+#other-info { margin-bottom: 130px; }
+#other-info h2 { margin-bottom: 5px; font-size: 2.4em; }
+#other-info h3 { margin: 15px 0; font-size: 1.8em; }
+#other-info h4 { margin: 15px 0 30px; font-size: 1.5em; }
+#other-info ul { margin: 0; margin-left: -15px; }
+#other-info li { margin-left: 0; }
+
+#other-info .container { padding-bottom: 50px; }
+
+#other-info .progress { height: 40px; }
+#other-info .progress-bar {
+  padding-top: 2px;
+  padding-left: 12px;
+  background-color: #145aa7;
+  box-shadow: none;
+  font-size: 1.3em;
+  font-weight: 300;
+  line-height: 1.428571429;
+  text-align: left;
+}
+  #other-info .progress-bar.english { width: 99%}
+  #other-info .progress-bar.indonesian { width: 99%; }
+  #other-info .progress-bar.japanese { width: 85%; }
+  #other-info .progress-bar.mandarin { width: 70%; }
+  #other-info .progress-bar.cantonese { width: 50%; }
+
+@media (min-width: 768px) and (max-width: 991px) {
+  #other-info { padding-bottom: 10px; }
+}
+
+@media (max-width: 767px) {
+  #other-info { padding-bottom: 10px; }
+}
+
 #social {
   position: relative;
   padding-bottom: 20px;
@@ -938,58 +972,26 @@ header {
   }
 }
 
-#other-info { padding-bottom: 150px; }
-#other-info h2 { margin-bottom: 5px; font-size: 2.4em; }
-#other-info h3 { margin: 15px 0; font-size: 1.8em; }
-#other-info h4 { margin: 15px 0 30px; font-size: 1.5em; }
-#other-info ul { margin: 0; margin-left: -15px; }
-#other-info li { margin-left: 0; }
-
-#other-info .container { padding-bottom: 50px; }
-
-#other-info .progress { height: 40px; }
-#other-info .progress-bar {
-  padding-top: 2px;
-  padding-left: 12px;
-  background-color: #145aa7;
-  box-shadow: none;
-  font-size: 1.3em;
-  font-weight: 300;
-  line-height: 1.428571429;
-  text-align: left;
-}
-  #other-info .progress-bar.english { width: 99%}
-  #other-info .progress-bar.indonesian { width: 99%; }
-  #other-info .progress-bar.japanese { width: 85%; }
-  #other-info .progress-bar.mandarin { width: 70%; }
-  #other-info .progress-bar.cantonese { width: 50%; }
-
-@media (min-width: 768px) and (max-width: 991px) {
-  #other-info { padding-bottom: 10px; }
-}
-
-@media (max-width: 767px) {
-  #other-info { padding-bottom: 10px; }
-}
-
 #contact {
-  padding: 100px 0 200px;
+  position: relative;
+  padding: 140px 0 80px;
   /* fallback */
-  background-color:#063053;
-  /* chrome 2+, safari 4+; multiple color stops */
-  background-image:-webkit-gradient(linear, left bottom, right top, color-stop(30%, #145aa7), color-stop(40%, #1056a3), color-stop(30%, #063053));
-  /* chrome 10+, safari 5.1+ */
-  background-image:-webkit-linear-gradient(45deg, #145aa7, #063053, #145aa7);
-  /* firefox; multiple color stops */
-  background-image:-moz-linear-gradient(45deg, #145aa7, #063053, #145aa7);
-  /* ie10 */
-  background-image: -ms-linear-gradient(45deg, #145aa7 0%, #063053 100%);
-  /* opera 11.1 */
-  background-image: -o-linear-gradient(45deg, #145aa7, #063053);
-  /* The "standard" */
-  background-image: linear-gradient(45deg, #145aa7, #063053);
-  z-index: 5;
+  background-color:#145aa7;
+  z-index: 2;
 }
+  #contact::before {
+    content: " ";
+    display: block;
+    background: #145aa7;
+    height: 200px;
+    width: 100%;
+    transform: skewY(-3deg) translateZ(0px);
+    position: absolute;
+    left: 0px;
+    bottom: -55px;
+    z-index: 0;
+    overflow: hidden;
+  }
 
 #contact h2 { margin-bottom: 0; color: #fff; font-size: 2.4em; }
 #contact h4 { margin-bottom: 15px; color: #ccc; font-size: 1.3em; font-weight: 300; }
@@ -1083,6 +1085,16 @@ header {
 
 #contact input.form-control.error, #contact textarea.form-control.error { border: 1px solid #f6625d; }
 #contact label.error { color: #f1433d; font-size: 1.2rem; font-weight: 300; }
+
+#my-location {
+  background-color: #666;
+  z-index: 5;
+}
+
+#my-location #map {
+  width: 100%;
+  height: 620px;
+}
 
 #thanks {
   position: relative;

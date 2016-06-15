@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
 	//smooth scrolling
 	$('a.smooth-link').on('click', function(e) {
 		e.preventDefault();
