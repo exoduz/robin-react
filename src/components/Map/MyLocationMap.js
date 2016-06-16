@@ -13,7 +13,8 @@ class MyLocationMap extends React.Component {
 			panControl: false,
 			draggable: false,
       mapTypeControl: false,
-      scrollwheel: false
+      scrollwheel: false,
+      disableDoubleClickZoom: true
 		}
 	}
 
@@ -38,7 +39,7 @@ class MyLocationMap extends React.Component {
 MyLocationMap.defaultProps = {
 	key: 'AIzaSyBUhAgNodobG0Ot2lXqDsaVkrBuYSENTxM',
   center: { lat: 37.8313, lng: -122.2852 }, //Emeryville
-  currentLocation: { lat: 37.8716, lng: -122.2927 }, //Berkeley
+  currentLocation: { lat: 37.8700, lng: -122.2927 }, //Berkeley
   zoom: 11
 };
 
