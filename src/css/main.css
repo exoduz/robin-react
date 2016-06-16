@@ -998,7 +998,12 @@ header {
 
 #contact form {}
 
+@media (min-width: 768px) and (max-width: 991px) {
+  #contact::before { transform: skewY(0) translateZ(0px);}
+}
+
 @media (max-width: 767px) {
+  #contact::before { transform: skewY(0) translateZ(0px); }
   #contact form { margin: 0 15px; }
 }
 
@@ -1111,6 +1116,14 @@ header {
   font-size: 1rem;
   font-weight: 100;
   border-radius: 4px;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  
+}
+
+@media (max-width: 767px) {
+  #my-location .marker-container { width: 200px; }
 }
 
 #thanks {
