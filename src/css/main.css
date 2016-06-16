@@ -1096,6 +1096,23 @@ header {
   height: 620px;
 }
 
+#my-location .marker-container { width: 300px; }
+#my-location .marker { width: 35px; float: left; }
+#my-location i.fa-map-marker {
+  color: #063053;
+}
+#my-location .text {
+  width: 265px;
+  float: right;
+  margin-top: 12px;
+  padding: 8px;
+  background: rgba(20, 90, 167, 0.9);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 100;
+  border-radius: 4px;
+}
+
 #thanks {
   position: relative;
   text-align: center;
@@ -1125,7 +1142,6 @@ header {
 @media (max-width: 767px) {
   #thanks .container::before { transform: skewY(0) translateZ(0px); }
   #thanks h2 { padding: 0; }
-
 }
 
 #not-found {

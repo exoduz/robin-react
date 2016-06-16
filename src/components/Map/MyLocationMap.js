@@ -1,6 +1,8 @@
 import React from 'react';
 import GoogleMap from 'google-map-react';
 
+import MyCurrentLocation from './MyCurrentLocation';
+
 class MyLocationMap extends React.Component {
 	constructor(props) {
 		super(props);
@@ -24,7 +26,10 @@ class MyLocationMap extends React.Component {
 				  }}
 	        defaultCenter={ this.props.center }
 	        defaultZoom={ this.props.zoom }
-	        options={ this._mapOptions() }/>
+	        options={ this._mapOptions() }
+	       >
+	       	<MyCurrentLocation { ...this.props.currentLocation } text={ 'Currently in this vicinity. If not, then I\'m seriously lost...' } />
+	        </GoogleMap>
        </div>
 		)
 	}
@@ -33,6 +38,7 @@ class MyLocationMap extends React.Component {
 MyLocationMap.defaultProps = {
 	key: 'AIzaSyBUhAgNodobG0Ot2lXqDsaVkrBuYSENTxM',
   center: { lat: 37.8313, lng: -122.2852 }, //Emeryville
+  currentLocation: { lat: 37.8716, lng: -122.2927 }, //Berkeley
   zoom: 11
 };
 
