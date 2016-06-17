@@ -42,7 +42,7 @@ MyLocationMap.defaultProps = {
 
 MyLocationMap.propTypes = {
 	key: React.PropTypes.string.isRequired,
-	center: React.PropTypes.array,
+	center: React.PropTypes.object,
 	currentLocation: React.PropTypes.object,
   zoom: React.PropTypes.int
 }
