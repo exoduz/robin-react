@@ -22,9 +22,6 @@ class MyLocationMap extends React.Component {
 		return (
 			<div id="map">
 				<GoogleMap
-					bootstrapURLKeys={{
-				    key: this.props.key,
-				  }}
 	        defaultCenter={ this.props.center }
 	        defaultZoom={ this.props.zoom }
 	        options={ this._mapOptions() }
@@ -37,7 +34,7 @@ class MyLocationMap extends React.Component {
 }
 
 MyLocationMap.defaultProps = {
-	key: 'AIzaSyBUhAgNodobG0Ot2lXqDsaVkrBuYSENTxM',
+	key: 'AIzaSyBMJ3dbPJo_R1bbAd9Sj2eIrnlWlNqSQOA',
   center: { lat: 37.8313, lng: -122.2852 }, //Emeryville
   currentLocation: { lat: 37.8700, lng: -122.2927 }, //Berkeley
   zoom: 11
@@ -46,6 +43,7 @@ MyLocationMap.defaultProps = {
 MyLocationMap.propTypes = {
 	key: React.PropTypes.string.isRequired,
 	center: React.PropTypes.array,
+	currentLocation: React.PropTypes.object,
   zoom: React.PropTypes.int
 }
 
