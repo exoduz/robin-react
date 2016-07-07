@@ -2,12 +2,9 @@ import React from 'react';
 
 class Image extends React.Component {
 	render() {
-		var data = this.props.data,
-			url = data.image_url,
-			alt = data.alt,
-			id = data.id;
+		var { image_url, alt, id } = this.props.data;
 
-		return <img src={ url } alt={ alt } id={ id } className="img-responsive" />
+		return <img src={ image_url } alt={ alt } id={ id } className="img-responsive" />
 	}
 }
 

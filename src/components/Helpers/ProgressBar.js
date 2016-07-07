@@ -5,10 +5,7 @@ class ProgressBar extends React.Component {
 		var type = this.props.type;
 
 		if (type === 'skills') { //skills
-			var data = this.props.data,
-			name = data.name,
-			class_name = data.class_name,
-			level = data.level;
+			var { name, class_name, level } = this.props.data;
 
 			return (
 				<div className="progress">
@@ -18,10 +15,7 @@ class ProgressBar extends React.Component {
 	      </div>
 			)
 		} else { //languages
-			var data = this.props.data,
-				name = data.name,
-				proficiency = data.proficiency,
-				level = data.level;
+			var { name, proficiency, level } = this.props.data;
 
 			return (
 				<div className="progress">

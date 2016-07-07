@@ -9,12 +9,7 @@ class Showcase extends React.Component {
 	}
 
 	render() {
-		var data = this.props.data,
-			class_name = data.class_name,
-			desc = data.desc,
-			logo = data.logo,
-			image = data.image,
-			link = data.link;
+		var { class_name, desc, logo, image, link } = this.props.data;
 
 		return (
 			<div className={ 'showcase ' + class_name }>
@@ -24,7 +19,7 @@ class Showcase extends React.Component {
           	{ this.props.children }
           </p>
 
-					{ Object.keys(data.link).map((key) => this.renderLink(link[key], key)) }
+					{ Object.keys(link).map((key) => this.renderLink(link[key], key)) }
         </div>
         <Image data={ image } />
       </div>

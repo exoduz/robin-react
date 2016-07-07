@@ -16,10 +16,10 @@ class Timeline extends React.Component {
 				role: 'Founder and Full Stack Developer',
 				location: 'Tokyo, Japan and Perth, Australia',
 				desc: [
-            'Founded Collectstor - a website where collectors can showcase and share their collections.',
-            'Coded the main website which includes user registration, profile information; news feed and upload feature using a LAMP stack using CakePHP as a framework.',
-            'Honed entrepreneurial skills by marketing the idea at events and to shops throughout Perth and the US. This included distributing advertising material such as pamphlets to various shops in Perth and the US.',
-            'Created iOS App in Swift, which handles user registration, login and an image upload feature. Implemented a web-based RESTful API to handle app interaction with the website.',
+            'Founded Collectstor – a website where collectors can showcase and share their collections.',
+            'Coded the website which includes user registration, profile information, news feed and upload using a LAMP stack and jQuery.',
+            'Honed entrepreneurial skills by marketing, distributing advertising at events and shops throughout Perth and the US.',
+            'Created iOS app in Swift. Implemented a RESTful API to handle app interaction with the website.',
         ],
         date: 'May 2013 - Present'
 			},
@@ -34,9 +34,9 @@ class Timeline extends React.Component {
 				role: 'Electronic Media Administrator',
 				location: 'Tokyo, Japan and Perth, Australia',
 				desc: [
-            'Developed several in-house CMS. The first is an event management and booking CMS, the second is an invitation, RSVP, and check in system for the Embassy’s biggest yearly event. Both of these were created using a LAMP stack and CakePHP.',
-            'Managed requirements and projects for the Embassy and other Government agencies within the Embassy.',
-            'Successfully internationalised and updated all Embassy and attached agencies’ websites to W3C and HTML5 compliant, also converting all pages from static to dynamic (LAMP stack) and fully responsive.Other duties included Linux server maintenance and official photographer.',
+            'Developed several in-house CMS, an event management and booking CMS, which included an invitation, RSVP, and check in system for the Embassy’s biggest yearly event. Projects were done in a LAMP stack and jQuery.',
+            'Managed requirements and projects for the Embassy and other Government agencies and stakeholders.',
+            'Successfully internationalised, updated and made responsive all Embassy and stakeholders’ website, converted all static pages to dynamic using LAMP stack. Other duties included Linux server maintenance and official photographer.',
           ],
         date: 'July 2008 - April 2013'
 			},
@@ -51,8 +51,8 @@ class Timeline extends React.Component {
 				role: 'Web and Software Developer',
 				location: 'Perth, Australia',
 				desc: [
-            'Successful integration of the RRIF web component using HTML, XSL and C# into their in-house CRM system. Their CRM system uses IBM UniVerse and Java.',
-            'Gave a web developer’s perspective to the RRIF (the company’s CRM) project, which helped improve the fluency of the project timeline.',
+            'Successful integration of a web component using HTML, XSL and C# into their in-house CRM system which uses IBM UniVerse and Java.',
+            'Gave a web developer’s perspective to the company’s CRM, which helped improve the fluency of the project timeline.',
           ],
         date: 'October 2006 - March 2007'
 			},
@@ -62,8 +62,7 @@ class Timeline extends React.Component {
 				role: 'Web Developer and Project Manager',
 				location: 'Perth, Australia',
 				desc: [
-            'Managed and coded web related content and new development projects, as well as an intranet system for web development projects in ASP.NET and MS SQL Server.',
-            'Created newsletter campaigns for marketing purposes.',
+            'Managed and coded newsletters, web related content and new projects, as well as an intranet system for web projects in ASP.NET and MS SQL Server.',
           ],
         date: 'March 2006 - October 2006'
 			},
@@ -73,10 +72,10 @@ class Timeline extends React.Component {
 				role: 'Full Stack Web Developer',
 				location: 'Perth, Australia',
 				desc: [
-            'Worked on the website lifecycle which includes the clients’ needs analysis, design, implementation and timely deployment of the project. This included being the project manager or team lead on several projects.',
-            'Occasionally maintained LAMP server.',
-            'Worked individually or in teams to successfully complete website projects done in PHP, MySQL and Javascript within specified deadlines.',
-            'Coded and implemented the first customisable online shopping cart in PHP for the company.',
+            'Worked on the clients’ needs analysis, design, implementation and timely deployment of the project individually and i',
+            'Project manager or team lead on several projects.',
+            'Website projects done in PHP, MySQL and JavaScript. Maintained LAMP server. ',
+            'Coded and implemented the first customisable online shopping cart in PHP.',
           ],
         date: 'January 2005 - February 2006'
 			},
@@ -86,8 +85,7 @@ class Timeline extends React.Component {
 				role: 'HTML and Javascript Programmer (Contract Position)',
 				location: 'Perth, Australia',
 				desc: [
-            'Managed and coded web related content and new development projects, as well as an intranet system for web development projects in ASP.NET and MS SQL Server.',
-            'Created newsletter campaigns for marketing purposes.',
+            'Coded HTML and JavaScript pages for their Global Expansion Program into Hong Kong, the Philippines, the USA, the UK, South Africa and Brunei.',
           ],
         date: 'December 2004'
 			},
@@ -97,8 +95,8 @@ class Timeline extends React.Component {
 				role: 'Web Developer and Program Analyst',
 				location: 'Perth, Australia',
 				desc: [
-            'Analyzed, designed, and implemented websites for clients in PHP and ASP, based on extensive research of customer needs and specifications. Managed end-to-end server setup, deployment and support for these sites.',
-            'Proposed and led an effort to create a successful online shop, effectively transitioning the company from IT solutions-only to a complete e-business firm.',
+            'Analyzed, designed, and implemented websites for clients in PHP and ASP, based on extensive research of customer needs and specifications. Also managed end-to-end server setup, deployment and support.',
+            'Proposed and led effort creating a successful online shop, transitioning from IT only to a complete e-business solution.',
           ],
         date: 'January 2002 - January 2005'
 			},

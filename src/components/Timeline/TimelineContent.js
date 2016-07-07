@@ -2,17 +2,10 @@ import React from 'react';
 
 class TimelineContent extends React.Component {
 	render() {
-		var data = this.props.data,
-			type = data.type,
-			desc = data.desc,
-			date = data.date;
+		var { type, desc, date } = this.props.data;
 
 		if (type === 'work') { //work
-			var company = data.company,
-				role = data.role,
-				location = data.location,
-				desc = data.desc,
-				date = data.date;
+			var { company, role, location } = this.props.data
 
 			return (
 	      <div className="timeline-block">
@@ -20,13 +13,11 @@ class TimelineContent extends React.Component {
 	          <i className="fa fa-laptop fa-2x"></i>
 	        </div> {/* timeline-img */}
 	     
-	        <div className="timeline-content">
+	        <div className="timeline-content work">
 	          <h3>{ company }</h3>
 	          <h4>{ role }</h4>
 	          <h5>{ location }</h5>
-	          
-	          { desc ? <ul>{ desc.map((value, index) => <li key={ index }>{ value }</li>) }</ul> : '' }
-
+	          { desc ? desc.map((value, index) => <p key={ index }>{ value }</p>) : '' }
 	          <span className="date">{ date }</span>
 	        </div> {/* timeline-content */}
 	      </div>
@@ -38,9 +29,8 @@ class TimelineContent extends React.Component {
             <i className="fa fa-map-marker fa-2x"></i>
           </div> {/* timeline-img */}
        
-          <div className="timeline-content">
-            <h4>{ desc }</h4>
-            <span className="date">{ date }</span>
+          <div className="timeline-content location">
+            <h4><span className="date">{ date }</span> { desc }</h4>
           </div> {/* timeline-content */}
         </div>
 			)
