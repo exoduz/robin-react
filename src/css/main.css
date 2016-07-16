@@ -393,13 +393,11 @@ header {
 
 @media (min-width: 768px) and (max-width: 991px) {
   #experiences {
-    margin: 0;
     padding-bottom: 0;
   }
 }
 @media (max-width: 767px) {
   #experiences {
-    margin: 0;
     padding-bottom: 0;
   }
 }
