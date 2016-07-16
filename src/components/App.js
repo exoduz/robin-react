@@ -48,6 +48,7 @@ class App extends React.Component {
 						</BootstrapColumn>
 						<BootstrapColumn classes={ 'col-md-7' }>
 							<Skills />
+							<Projects />
 							<OtherInformation />
 						</BootstrapColumn>
 					</BootstrapRow>

@@ -20,8 +20,8 @@ class OtherInformation extends React.Component {
 				lang5: { name: 'Cantonese', proficiency: 'Conversational', level: 50 }
 			},
 			os: {
-				os1: { name: 'OSX', class_name: 'osx', level: 95 },
-				os2: { name: 'Windows', class_name: 'windows', level: 90 },
+				os1: { name: 'OSX', class_name: 'osx', level: 97 },
+				os2: { name: 'Windows', class_name: 'windows', level: 95 },
 				os3: { name: 'Linux', class_name: 'linux', level: 75 }
 			},
 			software: {
@@ -57,7 +57,7 @@ class OtherInformation extends React.Component {
 					</BootstrapRow>
 
       		<BootstrapRow>
-		        <BootstrapColumn classes={ "col-md-6" }>
+		        <BootstrapColumn classes={ "col-sm-6" }>
 		        	<h3>OS</h3>
 							{ Object.keys(this._content('os')).map((key) => this.renderProgressBar('os', key)) }
 
@@ -65,14 +65,14 @@ class OtherInformation extends React.Component {
 							{ Object.keys(this._content('software')).map((key) => this.renderProgressBar('software', key)) }
 		        </BootstrapColumn>{/* .col-md-6 */}
 
-		        <BootstrapColumn classes={ "col-md-6" }>
+		        <BootstrapColumn classes={ "col-sm-6" }>
 		        	<h3>Languages</h3>
 							{ Object.keys(this._content('languages')).map((key) => this.renderProgressBar('languages', key)) }
 		        </BootstrapColumn>{/* .col-md-6 */}
 					</BootstrapRow>
 
       		<BootstrapRow>
-						<BootstrapColumn classes={ "col-md-4" }>
+						<BootstrapColumn classes={ "col-sm-4" }>
 		          <h3>Volunteer History</h3>
 	            <p>
 	              <strong>TEDxPerth</strong><br />
@@ -89,7 +89,7 @@ class OtherInformation extends React.Component {
 	            </p>
 		        </BootstrapColumn>{/* .col-md-4 */}
 
-						<BootstrapColumn classes={ "col-md-8" }>
+						<BootstrapColumn classes={ "col-sm-8" }>
 		          <h3>Certifications</h3>
 	            <p>
 	              <strong>Meros Language School</strong><br />

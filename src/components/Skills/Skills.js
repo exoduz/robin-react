@@ -11,7 +11,7 @@ class Skills extends React.Component {
 				programming1: { name: 'HTML5', class_name: 'html', level: 99 },
 				programming2: { name: 'CSS3', class_name: 'css', level: 99 },
 				programming3: { name: 'PHP', class_name: 'php', level: 90 },
-				programming4: { name: 'Javascript', class_name: 'js', level: 85 },
+				programming4: { name: 'Javascript', class_name: 'js', level: 87 },
 				programming5: { name: 'C#', class_name: 'csharp', level: 60 }
 			},
 			database: {
@@ -19,9 +19,9 @@ class Skills extends React.Component {
 				database2: { name: 'MS SQL Server', class_name: 'sqlserver', level: 60 }
 			},
 			frameworks: {
-				framework1: { name: 'CakePHP', class_name: 'cakephp', level: 90 },
-				framework2: { name: 'WordPress', class_name: 'wordpress', level: 85 },
-				framework3: { name: 'React.js', class_name: 'react-js', level: 75 },
+				framework1: { name: 'ReactJS', class_name: 'react-js', level: 80 },
+				framework2: { name: 'CakePHP', class_name: 'cakephp', level: 95 },
+				framework3: { name: 'WordPress', class_name: 'wordpress', level: 85 },
 				framework4: { name: '.NET', class_name: 'dotnet', level: 60 }
 			},
 			webserver: {
@@ -48,7 +48,7 @@ class Skills extends React.Component {
 		          <h2 className="text-center">Skills</h2>
 		        </BootstrapColumn>{/* .col-md-12 */}
 
-		        <BootstrapColumn classes={ "col-md-6" }>
+		        <BootstrapColumn classes={ "col-sm-6" }>
 		          <h3>Programming</h3>
 		          { Object.keys(this._content('programming')).map((key) => this.renderProgressBar('programming', key)) }
 
@@ -56,7 +56,7 @@ class Skills extends React.Component {
 		          { Object.keys(this._content('database')).map((key) => this.renderProgressBar('database', key)) }
 		        </BootstrapColumn>{/* .col-md-6 */}
 
-		        <BootstrapColumn classes={ "col-md-6" }>
+		        <BootstrapColumn classes={ "col-sm-6" }>
 		          <h3>Frameworks</h3>
 	            { Object.keys(this._content('frameworks')).map((key) => this.renderProgressBar('frameworks', key)) }
 	            <h4>... and others</h4>

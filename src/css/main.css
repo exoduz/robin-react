@@ -422,19 +422,19 @@ header {
   #skills .progress-bar.html { width: 95%; }
   #skills .progress-bar.css { width: 95%; }
   #skills .progress-bar.php { width: 90%; }
-  #skills .progress-bar.js { width: 85%; }
+  #skills .progress-bar.js { width: 87%; }
   #skills .progress-bar.csharp { width: 60%; }
   #skills .progress-bar.mysql { width: 85%; }
   #skills .progress-bar.sqlserver { width: 60%; }
-  #skills .progress-bar.cakephp { width: 90%; }
+  #skills .progress-bar.react-js { width: 80%; }
+  #skills .progress-bar.cakephp { width: 95%; }
   #skills .progress-bar.wordpress { width: 85%; }
-  #skills .progress-bar.react-js { width: 75%; }
   #skills .progress-bar.dotnet { width: 60%; }
   #skills .progress-bar.apache { width: 85%; }
   #skills .progress-bar.nginx { width: 85%; }
   #skills .progress-bar.iis { width: 75%; }
-  #skills .progress-bar.osx { width: 95%; }
-  #skills .progress-bar.windows { width: 90%; }
+  #skills .progress-bar.osx { width: 97%; }
+  #skills .progress-bar.windows { width: 95%; }
   #skills .progress-bar.linux { width: 75%; }
   #skills .progress-bar.office { width: 99%; }
   #skills .progress-bar.sublime { width: 90%; }
