@@ -34,15 +34,15 @@ class App extends React.Component {
 		return (
 			<div>
 				<Hero />
-				<div className="row">
-					<div className="col-md-6">
+				<section className="experiences row">
+					<div className="col-md-5">
+						<Timeline />
+					</div>
+					<div className="col-md-7">
 						<Skills />
 						<OtherInformation />
 					</div>
-					<div className="col-md-6">
-						<Timeline />
-					</div>
-				</div>
+				</section>
 				<Social />
 				<Contact />
 				<MapContainer />

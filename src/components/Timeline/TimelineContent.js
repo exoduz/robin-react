@@ -30,7 +30,8 @@ class TimelineContent extends React.Component {
           </div> {/* timeline-img */}
        
           <div className="timeline-content location">
-            <h4><span className="date">{ date }</span> { desc }</h4>
+          	<h4>{ desc }</h4>
+            <span className="date">{ date }</span>
           </div> {/* timeline-content */}
         </div>
 			)
