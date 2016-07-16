@@ -40,20 +40,10 @@ class App extends React.Component {
 		return (
 			<div>
 				<Hero />
-				
-				<section id="experiences">
-					<BootstrapRow>
-						<BootstrapColumn classes={ 'col-md-5' }>
-							<Timeline />
-						</BootstrapColumn>
-						<BootstrapColumn classes={ 'col-md-7' }>
-							<Skills />
-							<Projects />
-							<OtherInformation />
-						</BootstrapColumn>
-					</BootstrapRow>
-				</section>{/* #experiences */}
-				
+				<Skills />
+				<Projects />
+				<Timeline />
+				<OtherInformation />
 				<Social />
 				<Contact />
 				<MapContainer />

@@ -21,7 +21,7 @@ class Introduction extends React.Component {
 	        <p>I would love to hear from you. Say hi through <a href="#contact" className="smooth-link"><i className="fa fa-envelope-o"></i> the contact form</a>.</p>
 	        
 	        <div id="scroll-for-more-info">
-	          <a href="#experiences" className="btn btn-blue smooth-link"><i className="fa fa-chevron-down"></i> Would you like to know more?</a>
+	          <a href="#skills" className="btn btn-blue smooth-link"><i className="fa fa-chevron-down"></i> Would you like to know more?</a>
 	        </div>{/* #scroll-for-more-info */}
 	      </div>{/* .intro */}
 	    </BootstrapColumn>

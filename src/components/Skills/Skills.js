@@ -43,27 +43,30 @@ class Skills extends React.Component {
 		return (
 			<section id="skills">
 				<div className="container">
-		      <BootstrapRow>
-		        <BootstrapColumn classes={ "col-md-12" }>
-		          <h2 className="text-center">Skills</h2>
-		        </BootstrapColumn>{/* .col-md-12 */}
+					<h2 className="text-center">Skills</h2>
 
+		      <BootstrapRow>
 		        <BootstrapColumn classes={ "col-sm-6" }>
 		          <h3>Programming</h3>
 		          { Object.keys(this._content('programming')).map((key) => this.renderProgressBar('programming', key)) }
-
-							<h3>Database</h3>
-		          { Object.keys(this._content('database')).map((key) => this.renderProgressBar('database', key)) }
-		        </BootstrapColumn>{/* .col-md-6 */}
+		        </BootstrapColumn>{/* .col-sm-6 */}
 
 		        <BootstrapColumn classes={ "col-sm-6" }>
 		          <h3>Frameworks</h3>
 	            { Object.keys(this._content('frameworks')).map((key) => this.renderProgressBar('frameworks', key)) }
 	            <h4>... and others</h4>
+						</BootstrapColumn>{/* .col-sm-6 */}
+					</BootstrapRow>
+					<BootstrapRow>
+		        <BootstrapColumn classes={ "col-sm-6" }>
+		          <h3>Database</h3>
+		          { Object.keys(this._content('database')).map((key) => this.renderProgressBar('database', key)) }
+		        </BootstrapColumn>{/* .col-sm-6 */}
 
+		        <BootstrapColumn classes={ "col-sm-6" }>
 		          <h3>Web Server</h3>
 		          { Object.keys(this._content('webserver')).map((key) => this.renderProgressBar('webserver', key)) }
-		        </BootstrapColumn>{/* .col-md-6 */}
+						</BootstrapColumn>{/* .col-sm-6 */}
 		      </BootstrapRow>
 
 		      <BootstrapRow>

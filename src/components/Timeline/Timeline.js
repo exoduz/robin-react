@@ -126,10 +126,10 @@ class Timeline extends React.Component {
 		return (
 			<section id="timeline">
 		    <div className="container">
+					<h2 className="text-center">Professional Experience</h2>
+					
 		      <BootstrapRow>
 		        <BootstrapColumn classes={ 'col-md-12' }>
-		          <h2 className="text-center">Professional Experience</h2>
-
 		          <div id="timeline-container">
 								{ Object.keys(this._content()).map(key => this.renderTimeline(key)) }
 		          </div>{/* .timeline-container */}
