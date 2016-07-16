@@ -56,21 +56,19 @@ class OtherInformation extends React.Component {
 		        <BootstrapColumn classes={ "col-sm-6" }>
 		        	<h3>OS</h3>
 							{ Object.keys(this._content('os')).map((key) => this.renderProgressBar('os', key)) }
+
+							<h3>Software</h3>
+							{ Object.keys(this._content('software')).map((key) => this.renderProgressBar('software', key)) }
 						</BootstrapColumn>{/* .col-sm-6 */}
 
 						<BootstrapColumn classes={ "col-sm-6" }>
-							<h3>Software</h3>
-							{ Object.keys(this._content('software')).map((key) => this.renderProgressBar('software', key)) }
+							<h3>Languages</h3>
+							{ Object.keys(this._content('languages')).map((key) => this.renderProgressBar('languages', key)) }
 						</BootstrapColumn>{/* .col-sm-6 */}
 					</BootstrapRow>
 
       		<BootstrapRow>
-						<BootstrapColumn classes={ "col-sm-6" }>
-		        	<h3>Languages</h3>
-							{ Object.keys(this._content('languages')).map((key) => this.renderProgressBar('languages', key)) }
-						</BootstrapColumn>{/* .col-sm-6 */}
-
-						<BootstrapColumn classes={ "col-sm-6" }>
+						<BootstrapColumn classes={ "col-md-3" }>
 		          <h3>Volunteer History</h3>
 	            <p>
 	              <strong>TEDxPerth</strong><br />
@@ -85,11 +83,9 @@ class OtherInformation extends React.Component {
 	              November 2013 <em>Mentor</em><br />
 	              April 2013 <em>Mentor</em><br />
 	            </p>
-		        </BootstrapColumn>{/* .col-sm-6 */}
-					</BootstrapRow>
+		        </BootstrapColumn>{/* .col-md-4 */}
 
-      		<BootstrapRow>
-						<BootstrapColumn classes={ "col-sm-6" }>
+						<BootstrapColumn classes={ "col-md-3" }>
 		          <h3>Certifications</h3>
 	            <p>
 	              <strong>Meros Language School</strong><br />
@@ -99,15 +95,13 @@ class OtherInformation extends React.Component {
 	              <strong>Yuh Mei Chinese School</strong><br />
 	              Completion of Chinese language course
 	            </p>
-	           </BootstrapColumn>{/* .col-sm-6 */}
-					</BootstrapRow>
+						</BootstrapColumn>{/* .col-md-4 */}
 
-      		<BootstrapRow>
-      			<BootstrapColumn classes={ "col-sm-6" }>
-		          <h3>Personal Qualities</h3>
+						<BootstrapColumn classes={ "col-md-6" }>
+	            <h3>Personal Qualities</h3>
 		          <p>Hard working, goal-oriented, responsible, highly motivated and enthusiastic, as well as exerting an outgoing personality and confident in the approach of an unfamiliar problem.</p>
-		        </BootstrapColumn>{/* .col-sm-6 */}
-		      </BootstrapRow>
+	           </BootstrapColumn>{/* .col-sm-8 */}
+					</BootstrapRow>
 		    </div>{/* .container */}
 		  </section>
 		)
