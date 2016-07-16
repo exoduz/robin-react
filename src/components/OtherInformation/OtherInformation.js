@@ -60,7 +60,7 @@ class OtherInformation extends React.Component {
 		        </ColumnMD4>
 
 		        <ColumnMD4>
-		          <h3>Certificiations</h3>
+		          <h3>Certifications</h3>
 		          <ul>
 		            <li>
 		              <strong>Meros Language School</strong><br />

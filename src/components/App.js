@@ -8,7 +8,6 @@ import $ from 'jquery';
 window.jQuery = window.$ = $;
 require('bootstrap');
 require('../../node_modules/waypoints/lib/jquery.waypoints.js');
-//require('script!https://maps.googleapis.com/maps/api/js?key=AIzaSyCwXsu5MrSdkQ7kphEZbqp1WFjEj-inK7o&callback=initMap')
 require('../js/app.js');
 
 /**
@@ -21,6 +20,7 @@ require('../css/main.css');
 */
 import Hero from './Hero/Hero';
 import Skills from './Skills/Skills';
+import Projects from './Projects/Projects';
 import Timeline from './Timeline/Timeline';
 import OtherInformation from './OtherInformation/OtherInformation';
 import Social from './Social/Social';
@@ -34,9 +34,15 @@ class App extends React.Component {
 		return (
 			<div>
 				<Hero />
-				<Skills />
-				<Timeline />
-				<OtherInformation />
+				<div className="row">
+					<div className="col-md-6">
+						<Skills />
+						<OtherInformation />
+					</div>
+					<div className="col-md-6">
+						<Timeline />
+					</div>
+				</div>
 				<Social />
 				<Contact />
 				<MapContainer />

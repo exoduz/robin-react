@@ -247,13 +247,13 @@ class ContactForm extends React.Component {
 		        </div>{/* .col-md-12 */}
 
 		        <div className="col-md-8 col-md-offset-2">
-		          <form id="home-contact-form" onSubmit={ this.handleSubmit } novalidate>
+		          <form id="home-contact-form" onSubmit={ this.handleSubmit } noValidate>
 		            <h4>I need all the following information from you.</h4>
 		            
 								{ Object.keys(this._fields()).map(key => this.renderFields(key)) }
 
 	              <FormRow rowClass={ 'btn-container text-center' }>
-									<button type="submit" className="btn btn-submit btn-lg btn-success-outline" data-loading-text="Sending..." formnovalidate="formnovalidate">Send</button>
+									<button type="submit" className="btn btn-submit btn-lg btn-success-outline" data-loading-text="Sending..." formNoValidate="formnovalidate">Send</button>
 								</FormRow>
 		          
 		          </form>

@@ -249,7 +249,7 @@ header {
   right: -120px;
   display: inline-block;
 }
-#collectstor-logo-mb { width: 400px; }
+#collectstor-logo-mb { width: 400px; margin-bottom: 8px; }
 
 #collectstor-iphone {
   width: 350px;
@@ -257,6 +257,8 @@ header {
   bottom: -100px;
   right: -25px;
 }
+
+#collectstor-logo-ios { margin-bottom: 8px;}
 
 #lastcigarette-iphone {
   width: 300px;
@@ -266,6 +268,7 @@ header {
 }
 #last-cigarette-logo-ios {
   width: 100px;
+  margin-bottom: 8px;
   border: 1px solid #666;
   border-radius: 15px;
 }
@@ -333,7 +336,8 @@ header {
   #hero .border-r { border: 0; }
 
   #collectstor-mb {
-    position: static;
+    width: 400px;
+    right: -80px;
   }
 
   #collectstor-iphone {
@@ -369,7 +373,8 @@ header {
 #hero h2 { margin: 0; margin-bottom: 8px; font-size: 1.5rem; line-height: 1.2em; }
 
 #hero .tile h2 { color: #fff; font-size: 2.1rem; }
-#hero p { font-size: 1rem; }
+#hero p, #hero ul { font-size: 1rem; }
+#hero ul { margin-left: -15px; }
 
 @media (min-width: 1200px) and (max-width: 1550px) {
   #hero h1 { font-size: 1.8rem; }
@@ -381,7 +386,7 @@ header {
 #skills h2 { margin-bottom: 15px; font-size: 2.4em; }
 #skills h3 { margin: 15px 0; font-size: 1.3em; font-weight: 200; }
 #skills h4 { margin: 15px 0 30px; font-size: 1.5em; }
-#skills .container { padding-bottom: 50px; border-bottom: 1px solid #ddd; }
+#skills .container { margin-top: 30px; padding-bottom: 25px; }
 
 #skills .progress { height: 40px; }
 #skills .progress-bar {
@@ -416,9 +421,20 @@ header {
   #skills .progress-bar.adobe { width: 70%; }
   #skills .progress-bar.visualstudio { width: 70%; }
 
+@media (min-width: 768px) and (max-width: 991px) {
+  #skills .container { margin-top: 0; }
+}
+
+@media (max-width: 767px) {
+  #skills .container { margin-top: 0; }
+}
+
+#projects {}
+#projects h2 { margin-bottom: 15px; font-size: 2.4em; }
+#projects .container { padding-bottom: 25px; }
 
 #timeline {}
-#timeline .container { padding-bottom: 50px; border-bottom: 1px solid #ddd; }
+#timeline .container {}
 #timeline h2 { margin-bottom: 5px; font-size: 2.4em; }
 
 #timeline-container {
@@ -568,7 +584,7 @@ header {
   margin-left: 60px;
   background: #edf2f7;
   border-radius: 0.25em;
-  padding: 1em;
+  padding: 0.8em;
   box-shadow: 0 3px 0 #d7e4ed;
 }
 .timeline-content:after {
@@ -582,7 +598,7 @@ header {
 
 .timeline-content p {
   margin: 0.5em 0;
-  font-size: 1rem;
+  font-size: 0.9rem;
   line-height: 1.3;
 }
 .timeline-content .read-more, .timeline-content .date {
@@ -829,11 +845,13 @@ header {
   #other-info .progress-bar.cantonese { width: 50%; }
 
 @media (min-width: 768px) and (max-width: 991px) {
-  #other-info { padding-bottom: 10px; }
+  #other-info { margin-bottom: 15px; padding-bottom: 10px; }
+  #other-info .container { padding-bottom: 0; }
 }
 
 @media (max-width: 767px) {
-  #other-info { padding-bottom: 10px; }
+  #other-info { margin-bottom: 15px; padding-bottom: 10px; }
+  #other-info .container { padding-bottom: 0; }
 }
 
 #social {
@@ -862,13 +880,13 @@ header {
 #social a, #social a:active, #social a:hover { color: #fff; }
 
 @media (min-width: 768px) and (max-width: 991px) {
-  #social::before { transform: skewY(0) translateZ(0px);}
+  #social::before { height: auto; transform: skewY(0) translateZ(0px);}
   #social .title { padding-top: 8px; text-align: center; }
   #social .social-icons { text-align: center; }
 }
 
 @media (max-width: 767px) {
-  #social::before { transform: skewY(0) translateZ(0px); }
+  #social::before { height: auto; transform: skewY(0) translateZ(0px); }
   #social .title { padding-top: 8px; text-align: center; }
   #social .social-icons { text-align: center; }
 }
@@ -882,7 +900,7 @@ header {
 .social-icon {
   display: inline-block;
   cursor: pointer;
-  margin: 15px 10px;
+  margin: 8px;
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -891,18 +909,19 @@ header {
   z-index: 1;
   color: #fff;
 }
-#hero .social-icon { color: #000; }
-  .social-icon:after {
-    pointer-events: none;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    content: '';
-    -webkit-box-sizing: content-box; 
-    -moz-box-sizing: content-box; 
-    box-sizing: content-box;
+
+@media (max-width: 767px) {
+  .social-icon-wrap {
+    padding: 11px 0 0 2px;
   }
+
+  .social-icon {
+    margin: 10px 8px;
+    width: 60px;
+    height: 60px;
+  }
+  .social-icon i { font-size: 2.2rem; }
+}
 
 /* Effect 8 */
 .social-icon-effect .social-icon {
@@ -1007,11 +1026,13 @@ header {
 #contact form {}
 
 @media (min-width: 768px) and (max-width: 991px) {
-  #contact::before { transform: skewY(0) translateZ(0px);}
+  #contact { padding: 15px 50px 25px; }
+  #contact::before { height: auto; transform: skewY(0) translateZ(0px); }
 }
 
 @media (max-width: 767px) {
-  #contact::before { transform: skewY(0) translateZ(0px); }
+  #contact { padding: 15px 15px 25px; }
+  #contact::before { height: auto; transform: skewY(0) translateZ(0px); }
   #contact form { margin: 0 15px; }
 }
 
@@ -1127,11 +1148,16 @@ header {
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-  
+  #my-location #map {
+    height: 400px;
+  }
 }
 
 @media (max-width: 767px) {
-  #my-location .marker-container { width: 200px; }
+  #my-location #map {
+    height: 300px;
+  }
+  #my-location .marker-container { width: 180px; }
 }
 
 #thanks {
@@ -1156,13 +1182,13 @@ header {
 #thanks h2 { padding-top: 30px; font-size: 3.5em; }
 
 @media (min-width: 768px) and (max-width: 991px) {
-  #thanks .container::before { transform: skewY(0) translateZ(0px);}
-  #thanks h2 { padding: 15px; }
+  #thanks .container::before { height: auto; transform: skewY(0) translateZ(0px);}
+  #thanks h2 { padding: 20px; }
 }
 
 @media (max-width: 767px) {
-  #thanks .container::before { transform: skewY(0) translateZ(0px); }
-  #thanks h2 { padding: 0; }
+  #thanks .container::before { height: auto; transform: skewY(0) translateZ(0px); }
+  #thanks h2 { padding: 10px 10px 20px; font-size: 3em; }
 }
 
 #not-found {
@@ -1187,7 +1213,7 @@ footer {
   color: #666;
 }
 
-footer #latest { margin-bottom: 25px; padding-bottom: 25px; border-bottom: 1px solid #ccc; }
+footer #latest { margin-bottom: 25px; padding-bottom: 25px;  }
 
 footer #copyright { font-size: 0.85em; }
 
@@ -1197,3 +1223,10 @@ footer h4 { margin-left: 0; margin-bottom: 8px; font-size: 1.3em; }
 footer a { color: #444; text-decoration: underline; }
 footer a:hover, footer a:focus { color: #333; text-decoration: none; }
 
+@media (min-width: 768px) and (max-width: 991px) {
+  footer { margin-top: 0; }
+}
+
+@media (max-width: 767px) {
+  footer { margin-top: 0; }
+}
