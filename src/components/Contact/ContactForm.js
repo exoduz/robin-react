@@ -5,6 +5,8 @@ import FormRow from './FormRow';
 import InputText from './InputText';
 import TextArea from './TextArea';
 import Validate from './../Helpers/Validate'
+import BootstrapRow from './../Helpers/BootstrapRow';
+import BootstrapColumn from './../Helpers/BootstrapColumn';
 
 class ContactForm extends React.Component {
 	constructor(props) {
@@ -241,12 +243,12 @@ class ContactForm extends React.Component {
 		return (
 			<section id="contact">
 		    <div className="container">
-		      <div className="row">
-		        <div className="col-md-12">
+		      <BootstrapRow>
+		        <BootstrapColumn classes={ "col-md-12" }>
 		          <h2 className="text-center">Drop me a line and say hi</h2>
-		        </div>{/* .col-md-12 */}
+		        </BootstrapColumn>{/* .col-md-12 */}
 
-		        <div className="col-md-8 col-md-offset-2">
+		        <BootstrapColumn classes={ "col-md-8 col-md-offset-2" }>
 		          <form id="home-contact-form" onSubmit={ this.handleSubmit } noValidate>
 		            <h4>I need all the following information from you.</h4>
 		            
@@ -257,8 +259,8 @@ class ContactForm extends React.Component {
 								</FormRow>
 		          
 		          </form>
-		        </div>{/* .col-md-8 .col-md-offset-2 */}
-		      </div>{/* .row */}
+		        </BootstrapColumn>{/* .col-md-8 .col-md-offset-2 */}
+		      </BootstrapRow>{/* .row */}
 		    </div>{/* .container */}
 		  </section>
 		)

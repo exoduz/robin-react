@@ -16,6 +16,12 @@ require('../js/app.js');
 require('../css/main.css');
 
 /**
+ React helpers
+*/
+import BootstrapRow from './Helpers/BootstrapRow';
+import BootstrapColumn from './Helpers/BootstrapColumn';
+
+/**
  React components
 */
 import Hero from './Hero/Hero';
@@ -34,15 +40,19 @@ class App extends React.Component {
 		return (
 			<div>
 				<Hero />
-				<section className="experiences row">
-					<div className="col-md-5">
-						<Timeline />
-					</div>
-					<div className="col-md-7">
-						<Skills />
-						<OtherInformation />
-					</div>
-				</section>
+				
+				<section id="experiences">
+					<BootstrapRow>
+						<BootstrapColumn classes={ 'col-md-5' }>
+							<Timeline />
+						</BootstrapColumn>
+						<BootstrapColumn classes={ 'col-md-7' }>
+							<Skills />
+							<OtherInformation />
+						</BootstrapColumn>
+					</BootstrapRow>
+				</section>{/* #experiences */}
+				
 				<Social />
 				<Contact />
 				<MapContainer />

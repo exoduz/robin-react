@@ -1,5 +1,8 @@
 import React from 'react';
 
+import BootstrapRow from './../Helpers/BootstrapRow';
+import BootstrapColumn from './../Helpers/BootstrapColumn';
+
 class Footer extends React.Component {
 	getYear() {
 		var today = new Date(),
@@ -12,11 +15,11 @@ class Footer extends React.Component {
 			<footer>
 		    <div className="container">
 		      <section id="copyright">
-		        <div className="row">
-		          <div className="col-md-6">
+		        <BootstrapRow>
+		          <BootstrapColumn classes={ "col-md-12" }>
 		            Copyright &copy; { this.getYear() } Robin Roy Julius ( <a href="mailto:me@robinjulius.com">me@robinjulius.com</a> )
-		          </div>{/* .col-md-6 */}
-		        </div>{/* .row */}
+		          </BootstrapColumn>{/* .col-md-12 */}
+		        </BootstrapRow>
 		      </section>{/* #copyright */}
 		    </div>{/* .container */}
 		  </footer>

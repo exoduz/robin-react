@@ -100,6 +100,10 @@ header {
 #hero { 
   width: 100%;
   height: 100vh;
+
+  -webkit-box-shadow: 0px 6px 35px 0px rgba(230, 230, 230, 0.6);
+  -moz-box-shadow: 0px 6px 35px 0px rgba(230, 230, 230, 0.6);
+  box-shadow: 0px 6px 35px 0px rgba(230, 230, 230, 0.6);
 }
 #hero .intro-container {
   height: 100vh;
@@ -382,11 +386,29 @@ header {
   #hero p { font-size: 1rem; }
 }
 
+#experiences {
+  margin: 30px 15px 0;
+  padding-bottom: 120px;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  #experiences {
+    margin: 0;
+    padding-bottom: 0;
+  }
+}
+@media (max-width: 767px) {
+  #experiences {
+    margin: 0;
+    padding-bottom: 0;
+  }
+}
+
 #skills {}
 #skills h2 { margin-bottom: 15px; font-size: 2.4em; }
 #skills h3 { margin: 15px 0; font-size: 1.3em; font-weight: 200; }
 #skills h4 { margin: 15px 0 30px; font-size: 1.5em; }
-#skills .container { margin-top: 30px; padding-bottom: 25px; }
+#skills .container { padding-bottom: 25px; }
 
 #skills .progress { height: 40px; }
 #skills .progress-bar {
@@ -529,13 +551,15 @@ header {
   font-size: 1.1em;
 }
 
-.cssanimations .timeline-content.is-hidden {
-  visibility: hidden;
-}
-.cssanimations .timeline-block .timeline-content.bounce-in {
-  -webkit-animation: bounce 0.6s;
-  -moz-animation: bounce 0.6s;
-  animation: bounce 0.6s;
+@media only screen and (min-width: 1170px) {
+  .cssanimations .timeline-content.is-hidden {
+    visibility: hidden;
+  }
+  .cssanimations .timeline-block .timeline-content.bounce-in {
+    -webkit-animation: bounce 0.6s;
+    -moz-animation: bounce 0.6s;
+    animation: bounce 0.6s;
+  }
 }
 
 @-webkit-keyframes bounce {

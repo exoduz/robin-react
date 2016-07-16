@@ -2,6 +2,8 @@ import React from 'react';
 
 import Introduction from './Introduction';
 import Showcase from './Showcase';
+import BootstrapRow from './../Helpers/BootstrapRow';
+import BootstrapColumn from './../Helpers/BootstrapColumn';
 
 class Hero extends React.Component {
 	
@@ -100,14 +102,14 @@ class Hero extends React.Component {
 		  <section id="hero">
 		    <Introduction />
 
-		    <div className="col-lg-9 tile">
-		      <div className="row">
+		    <BootstrapColumn classes={ "col-lg-9 tile" }>
+		      <BootstrapRow>
 		        <Showcase data={ showcase1 } >
 		        	Collectstor is a platform for collectors of all things to socialize, explore, and showcase their own collections.
 		        </Showcase>
-		      </div>{/* .row */}
+		      </BootstrapRow>
 
-		      <div className="row">
+		      <BootstrapRow>
 		      	<Showcase data={ showcase2 } >
 		        	The iPhone app is also available.<br />
 		        	Now you can showcase and share collections on the go.
@@ -115,8 +117,8 @@ class Hero extends React.Component {
 		      	<Showcase data={ showcase3 } >
 		        	A simple counter to track the time you last quit smoking. It shows information such as the duration, money saved and cigarettes not smoked.
 		        </Showcase>
-		      </div>{/* .col-md-6 .showcase .showcase-2 border-r */}
-		    </div>{/* .col-lg-9 tile */}
+		      </BootstrapRow>
+		    </BootstrapColumn>{/* .col-lg-9 tile */}
 		  </section>
 		)
 	}

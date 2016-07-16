@@ -1,6 +1,8 @@
 import React from 'react';
 
 import TimelineContent from './TimelineContent';
+import BootstrapRow from './../Helpers/BootstrapRow';
+import BootstrapColumn from './../Helpers/BootstrapColumn';
 
 class Timeline extends React.Component {
 	
@@ -124,15 +126,15 @@ class Timeline extends React.Component {
 		return (
 			<section id="timeline">
 		    <div className="container">
-		      <div className="row">
-		        <div className="col-md-12">
+		      <BootstrapRow>
+		        <BootstrapColumn classes={ 'col-md-12' }>
 		          <h2 className="text-center">Professional Experience</h2>
 
 		          <div id="timeline-container">
 								{ Object.keys(this._content()).map(key => this.renderTimeline(key)) }
 		          </div>{/* .timeline-container */}
-		        </div>{/* .col-md-12 */}
-		      </div>{/* .row */}
+		        </BootstrapColumn>{/* .col-md-12 */}
+		      </BootstrapRow>
 		    </div>{/* .container */}
 		  </section>
 		)
