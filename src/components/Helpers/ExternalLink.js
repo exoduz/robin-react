@@ -2,14 +2,10 @@ import React from 'react';
 
 class ExternalLink extends React.Component {
 	render() {
-		var data = this.props.data,
-			url = data.link_url,
-			text = data.text,
-			icon = data.icon,
-			class_name = data.class_name;
+		var { link_url, text, icon, class_name } = this.props.data;
 
 		return (
-			<a href={ url } target="_blank" className={ "btn btn-external-link " + class_name } role="button">
+			<a href={ link_url } target="_blank" className={ "btn btn-external-link " + class_name } role="button">
 				 { text } { icon ? <i className={ icon }></i> : '' }
 			</a>
 		)

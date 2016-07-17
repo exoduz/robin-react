@@ -24,6 +24,7 @@ import BootstrapColumn from './Helpers/BootstrapColumn';
 /**
  React components
 */
+import Nav from './Nav/Nav';
 import Hero from './Hero/Hero';
 import Skills from './Skills/Skills';
 import Projects from './Projects/Projects';
@@ -39,6 +40,7 @@ class App extends React.Component {
 	render() {
 		return (
 			<div>
+				<Nav />
 				<Hero />
 				<Skills />
 				<Projects />

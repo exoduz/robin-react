@@ -100,6 +100,7 @@ class Hero extends React.Component {
 
 		return (
 		  <section id="hero">
+		  	<a id="top"></a>
 		    <Introduction />
 
 		    <BootstrapColumn classes={ "col-lg-9 tile" }>

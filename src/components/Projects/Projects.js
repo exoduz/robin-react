@@ -1,37 +1,66 @@
 import React from 'react';
 
-import Image from '../Helpers/Image';
 import BootstrapRow from './../Helpers/BootstrapRow';
 import BootstrapColumn from './../Helpers/BootstrapColumn';
+import Image from '../Helpers/Image';
+import ExternalLink from './../Helpers/ExternalLink';
 
 class Projects extends React.Component {
 	render() {
 		return (
 			<section id="projects">
 				<div className="container">
-		      <BootstrapRow>
-		        <BootstrapColumn classes={ "col-md-12" }>
-		          <h2>Personal Projects</h2>
-		        </BootstrapColumn> {/* .col-md-12 */}
-		      </BootstrapRow>
+					<h2 className="text-center">Personal Projects</h2>
 
-		      <BootstrapRow>
-		      	<BootstrapColumn classes={ "col-md-7" }>
-		      		Hello
-		      	</BootstrapColumn> {/* .col-md-9 */}
-		      	<BootstrapColumn classes={ "col-md-5" }>
-		      		<img src="assets/img/projects-robin-website.png" alt="Robin's Website" className="img-responsive" />
-		      	</BootstrapColumn> {/* .col-md-3 */}
-		      </BootstrapRow>
+					<BootstrapRow>
+						<BootstrapColumn classes={ 'col-md-6' }>
+			      	<div className="project-item">
+				      	<img src="assets/img/projects-robin-website.png" alt="Robin's Website" className="img-responsive" />
+				      	<div className="text">
+				      		<h3>Robin's Personal Website</h3>
+				      		<p>After studying ReactJS for a few weeks, I decided to take this opportunity to change my personal site from WordPress to ReactJS.</p>
+				      		<p>
+				      			<span className="label">ReactJS</span>
+				      			<span className="label">jQuery</span>
+				      			<span className="label">Webpack</span>
+				      		</p>
 
-		      <BootstrapRow>
-		      	<BootstrapColumn classes={ "col-md-7 col-md-push-5" }>
-		      		Hello
-		      	</BootstrapColumn> {/* .col-md-9 */}
-		      	<BootstrapColumn classes={ "col-md-5 col-md-pull-7" }>
-		        	<img src="assets/img/projects-jerry-website.png" alt="Jerry's Website" className="img-responsive" />
-		        </BootstrapColumn> {/* .col-md-3 */}
-		      </BootstrapRow>
+				      		<div className="button">
+				      			<ExternalLink data={{
+				      				link_url: 'https://github.com/exoduz/robin-react',
+											text: 'Download source on Github',
+											icon: 'fa fa-github',
+											class_name: 'btn-blue'
+				      			}} />
+				      		</div>{/* .button */}
+				      	</div>{/* .text */}
+			      	</div>{/* .project-item */}
+			      </BootstrapColumn>{/* .col-sm-6 */}
+
+						<BootstrapColumn classes={ 'col-md-6' }>
+			      	<div className="project-item clearfix">
+								<img src="assets/img/projects-jerry-website.png" alt="Jerry's Website" className="img-responsive" />
+								<div className="text">
+				      		<h3>Jerry's Portfolio Website</h3>
+				      		<p>Originally this was written in vanilla PHP, but I was on a roll so I decided to also to it in ReactJS.</p>
+				      		<p>
+				      			<span className="label">ReactJS</span>
+				      			<span className="label">jQuery</span>
+				      			<span className="label">Webpack</span>
+				      		</p>
+
+				      		<div className="button">
+				      			<ExternalLink data={{
+				      				link_url: 'https://github.com/exoduz/jerry-react',
+											text: 'Download source on Github',
+											icon: 'fa fa-github',
+											class_name: 'btn-blue'
+				      			}} />
+				      		</div>{/* .button */}
+				      	</div>{/* .text */}
+			      	</div>{/* .project-item */}
+		      	</BootstrapColumn>{/* .col-sm-6 */}
+	      	</BootstrapRow>
 		    </div>{/* .container */}
 		 	</section>
 		)

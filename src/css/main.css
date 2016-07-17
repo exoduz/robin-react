@@ -92,11 +92,6 @@ header {
 .hidden-on-mobile { display: inline-block; }
 .show-on-mobile { display: none; }
 
-#scroll-for-more-info {
-  margin: 30px auto;
-  text-align: center;
-}
-
 #hero { 
   width: 100%;
   height: 100vh;
@@ -140,6 +135,11 @@ header {
 #hero .showcase.showcase-3 { padding-left: 30px; background: #3c6c99; }
   #hero .showcase.showcase-3 .text { flex: 0 0 55%; }
 
+#scroll-for-more-info {
+  margin: 30px auto;
+  text-align: center;
+}
+
 @media (min-width: 1551px) and (max-width: 1600px) {
   #hero .showcase.showcase-1 .text
     { flex: 0 0 53%; }
@@ -161,13 +161,13 @@ header {
     font-size: 0.9rem;
   }
 
-  #scroll-for-more-info .btn { font-size: 0.8rem; }
-
   #hero .showcase.showcase-2 .text,
   #hero .showcase.showcase-3 .text {
     flex: 0 0 30%;
   }
   #hero .showcase.showcase-3 h2 { font-size: 1.8rem; }
+
+  #scroll-for-more-info .btn { font-size: 0.8rem; }
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -387,23 +387,7 @@ header {
   #hero p { font-size: 1rem; }
 }
 
-#experiences {
-  margin: 30px 15px 0;
-  padding-bottom: 120px;
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  #experiences {
-    padding-bottom: 0;
-  }
-}
-@media (max-width: 767px) {
-  #experiences {
-    padding-bottom: 0;
-  }
-}
-
-#skills {} /* use padding instead of margin so mobile won't break */
+#skills { margin-bottom: 80px; }
 #skills h2 { margin-bottom: 15px; font-size: 2.4em; }
 #skills h3 { margin: 15px 0; font-size: 1.3em; font-weight: 200; }
 #skills h4 { margin: 15px 0 30px; font-size: 1.5em; }
@@ -448,14 +432,45 @@ header {
 }
 
 @media (max-width: 767px) {
+  #skills { margin-bottom: 40px; }
   #skills .container { margin: auto; }
 }
 
-#projects {}
-#projects h2 { margin-bottom: 15px; font-size: 2.4em; }
+#projects { margin-bottom: 50px; }
+#projects h2 { margin-bottom: 25px; font-size: 2.4em; }
+#projects h3 { margin: 15px 0 10px; text-align: center; font-size: 1.6rem; }
+#projects p {}
 #projects .container { padding-bottom: 25px; }
 
-#timeline {}
+.project-item { margin-bottom: 25px; }
+.project-item img {
+  width: 480px;
+  margin: 15px auto;
+}
+.project-item .label {
+  margin-left: 3px;
+  margin-right: 3px;
+  padding: .2em .7em .3em;
+  background: #e0ecf8;
+  color: #1e2022;
+  border-radius: 12px;
+  font-weight: normal;
+}
+.project-item .button {
+  margin-top: 20px;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  #projects { margin-bottom: 30px; }
+  #projects .btn-blue,
+  #projects .btn-blue:active,
+  #projects .btn-blue:focus {
+    width: 80%;
+  }
+}
+
+#timeline { margin-bottom: 60px; }
 #timeline .container {}
 #timeline h2 { margin-bottom: 5px; font-size: 2.4em; }
 
@@ -485,6 +500,10 @@ header {
     left: 50%;
     margin-left: -2px;
   }
+}
+
+@media (max-width: 767px) {
+  #timeline { margin-bottom: 30px; }
 }
 
 .timeline-block {
