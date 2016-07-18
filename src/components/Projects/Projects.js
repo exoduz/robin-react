@@ -42,7 +42,7 @@ class Projects extends React.Component {
 								<img src="assets/img/projects-jerry-website.png" alt="Jerry's Website" className="img-responsive" />
 								<div className="text">
 				      		<h3>Jerry's Portfolio Website</h3>
-				      		<p>Originally this was written in vanilla PHP, but I was on a roll so I decided to also to it in ReactJS.</p>
+				      		<p>Originally this was written in vanilla PHP, but I was on a roll so I decided to also rewrite it in ReactJS.</p>
 				      		<p>
 				      			<span className="label">ReactJS</span>
 				      			<span className="label">jQuery</span>
